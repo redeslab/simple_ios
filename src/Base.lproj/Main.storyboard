@@ -801,7 +801,7 @@
                                             <constraint firstAttribute="width" constant="32" id="ONE-bf-LWb"/>
                                             <constraint firstAttribute="height" constant="32" id="iQQ-Zs-Y7C"/>
                                         </constraints>
-                                        <state key="normal" image="next_icon"/>
+                                        <state key="normal" image="Next_icon"/>
                                         <connections>
                                             <segue destination="ukp-MS-e13" kind="show" identifier="WalletDetailSegID" id="6D5-3X-6TF"/>
                                         </connections>
@@ -1564,6 +1564,7 @@
         <image name="03_img" width="279" height="312"/>
         <image name="Dis_butt" width="282" height="282"/>
         <image name="Global_Gray_icon" width="24" height="24"/>
+        <image name="Next_icon" width="22" height="22"/>
         <image name="PING_icon" width="24" height="24"/>
         <image name="QR_icon" width="22" height="22"/>
         <image name="Smart_img" width="24" height="24"/>
@@ -1574,7 +1575,6 @@
         <image name="logo" width="80" height="80"/>
         <image name="minerN_icon" width="22" height="22"/>
         <image name="nav_back_icon" width="22" height="22"/>
-        <image name="next_icon" width="22" height="22"/>
         <image name="pick_icon" width="22" height="22"/>
         <image name="pin_icon" width="31" height="31"/>
         <image name="right_icon" width="14" height="14"/>

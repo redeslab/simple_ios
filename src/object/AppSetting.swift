@@ -14,7 +14,7 @@ class AppSetting:NSObject{
         
         public static let workQueue = DispatchQueue.init(label: "APP Work Queue", qos: .utility)
         public static var isGlobalModel:Bool = false
-        public static var isStreamModel:Bool = false
+        public static var isStreamModel:Bool = true
         public static let AdUpdateInterval = TimeInterval(24*3600)
         
         static var coreData:CDAppSetting?
@@ -41,7 +41,7 @@ class AppSetting:NSObject{
                 if setting == nil{
                         setting = CDAppSetting(context: context)
                         setting!.minerAddrInUsed = nil
-                        setting!.stream = false
+                        setting!.stream = true
                         
                         AppSetting.coreData = setting
                         
