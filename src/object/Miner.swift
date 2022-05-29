@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-import IosLib
+import Simple
 import SwiftyJSON
 
 class Miner : NSObject {
