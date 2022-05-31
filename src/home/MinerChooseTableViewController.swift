@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import IosLib
+import Simple
 import SwiftyJSON
 class MinerChooseViewController: UIViewController {
         

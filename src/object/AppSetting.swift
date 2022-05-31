@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-import IosLib
+import Simple
 
 class AppSetting:NSObject{
         

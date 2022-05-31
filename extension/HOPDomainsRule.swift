@@ -117,7 +117,7 @@ class HOPDomainsRule: AllRule {
 //                        NSLog("--------->*******[Domain]Hit host:[\(session.host):\(session.port)]")
                         return adapterFactory
                 }
-//                NSLog("--------->[Domain]By pass host:[\(session.host):\(session.port)]")
+                NSLog("--------->[Domain]By pass host:[\(session.host):\(session.port)]")
                 return nil
         }
         
