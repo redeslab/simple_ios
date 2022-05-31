@@ -37,9 +37,9 @@
 	<dict>
 		<key>exclude</key>
 		<array>
-                        <string>*.com.cn</string>
+			<string>*.com.cn</string>
 			<string>*.icloud.com</string>
-                        <string>*.icloud.com.cn</string>
+			<string>*.icloud.com.cn</string>
 			<string>*.weixin.com</string>
 			<string>*.qq.com</string>
 			<string>*.apple.com</string>
@@ -303,54 +303,6 @@
 			</array>
 			<key>line</key>
 			<array>
-				<string>203.104.153.1/32</string>
-				<string>203.104.153.129/32</string>
-				<string>203.104.150.2/32</string>
-				<string>125.209.222.202/32</string>
-				<string>125.209.222.59/32</string>
-				<string>125.209.252.41/32</string>
-				<string>125.209.252.42/32</string>
-				<string>125.209.252.43/32</string>
-				<string>125.209.252.44/32</string>
-				<string>203.104.150.3/32</string>
-				<string>203.104.153.130/32</string>
-				<string>203.104.153.2/32</string>
-				<string>203.104.160.31/32</string>
-				<string>203.104.160.32/32</string>
-				<string>203.104.174.14/32</string>
-				<string>203.104.174.15/32</string>
-				<string>203.104.174.16/32</string>
-				<string>203.104.174.17/32</string>
-				<string>203.104.174.18/32</string>
-				<string>203.104.142.52/32</string>
-				<string>23.32.5.48/32</string>
-				<string>125.209.210.239/32</string>
-				<string>203.104.138.138/32</string>
-				<string>125.209.238.181/32</string>
-				<string>125.209.238.209/32</string>
-				<string>203.104.153.135/32</string>
-				<string>203.104.150.4/32</string>
-				<string>203.104.153.7/32</string>
-				<string>23.219.132.153/32</string>
-				<string>23.2.27.60/32</string>
-				<string>104.121.240.61/32</string>
-				<string>23.205.217.59/32</string>
-				<string>104.70.135.244/32</string>
-				<string>23.57.196.158/32</string>
-				<string>23.57.244.158/32</string>
-				<string>69.192.179.250/32</string>
-				<string>104.98.19.185/32</string>
-				<string>23.63.22.24/32</string>
-				<string>104.74.169.189/32</string>
-				<string>23.0.130.177/32</string>
-				<string>125.209.238.186/32</string>
-				<string>23.215.103.24/32</string>
-				<string>23.215.103.40/32</string>
-				<string>125.209.252.17/32</string>
-				<string>125.209.252.18/32</string>
-				<string>203.104.174.12/32</string>
-				<string>203.104.160.11/32</string>
-				<string>203.104.174.13/32</string>
 				<string>125.209.248.6/32</string>
 			</array>
 			<key>tel</key>

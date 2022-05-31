@@ -208,7 +208,7 @@ class HOPAdapter: AdapterSocket {
         override open func readData() {
                 if internalStatus == .forwarding{
                         if self.readingStatus == .needLengthInHead{
-                                NSLog("--------->[\(objID)] AAAAA readData --reading data length from head......-")
+//                                NSLog("--------->[\(objID)] AAAAA readData --reading data length from head......-")
                                 self.socket.readDataTo(length: HOPAdapter.PACK_HEAD_SIZE)
                                 self.readingStatus = .readingLength
                         }

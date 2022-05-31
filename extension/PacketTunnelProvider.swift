@@ -73,19 +73,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                                 if (self.enablePacketProcessing){
                                         self.interface = TUNInterface(packetFlow: self.packetFlow)
                                         
-                                        let fakeIPPool = try! IPPool(range: IPRange(startIP: IPAddress(fromString: "198.18.1.1")!, endIP: IPAddress(fromString: "198.18.255.255")!))
-                                        
-                                        
-                                        let dnsServer = DNSServer(address: IPAddress(fromString: "198.18.0.1")!, port: NEKit.Port(port: 53), fakeIPPool: fakeIPPool)
-                                        let resolver = UDPDNSResolver(address: IPAddress(fromString: "8.8.8.8")!, port: NEKit.Port(port: 53))
-                                        dnsServer.registerResolver(resolver)
-                                        self.interface.register(stack: dnsServer)
-                                        
-                                        DNSServer.currentServer = dnsServer
-                                        
-                                        let udpStack = UDPDirectStack()
-                                        self.interface.register(stack: udpStack)
-                                        
                                         let tcpStack = TCPStack.stack
                                         tcpStack.proxyServer = self.proxyServer
                                         self.interface.register(stack:tcpStack)
@@ -128,15 +115,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 proxySettings.excludeSimpleHostnames = true;
                 proxySettings.matchDomains = [""]
                 proxySettings.exceptionList = Utils.Exclusives
-//                NSLog("--------->exclude->\(proxySettings.exceptionList!)")
-                if enablePacketProcessing {
-                        let DNSSettings = NEDNSSettings(servers: ["198.18.0.1"])
-                        DNSSettings.matchDomains = [""]
-                        DNSSettings.matchDomainsNoSearch = false
-                        networkSettings.dnsSettings = DNSSettings
-                }
                 
-
                 networkSettings.proxySettings = proxySettings;
                 RawSocketFactory.TunnelProvider = self
                 
@@ -145,13 +124,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 let hopRule = HOPDomainsRule(adapterFactory: hopAdapterFactory, urls: Utils.Domains)
                 
                 var ipStrings:[String] = []
-                ipStrings.append(contentsOf: Utils.IPRange["line"] as! [String])
                 ipStrings.append(contentsOf: Utils.IPRange["tel"] as! [String])
-                ipStrings.append(contentsOf: Utils.IPRange["whatsapp"] as! [String])
-                ipStrings.append(contentsOf: Utils.IPRange["snap"] as! [String])
-                ipStrings.append(contentsOf: Utils.IPRange["netfix"] as! [String])
                 let ipRange = try HOPIPRangeRule(adapterFactory: hopAdapterFactory, ranges: ipStrings)
-//                NSLog("--------->\(ipStrings)")
+                
                 RuleManager.currentManager = RuleManager(fromRules: [hopRule, ipRange], appendDirect: true)
                 return networkSettings
         }
