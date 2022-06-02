@@ -63,7 +63,7 @@ open class HOPIPRangeRule: Rule {
      */
     override open func match(_ session: ConnectSession) -> AdapterFactory? {
         guard let ip = IPAddress(fromString: session.ipAddress) else {
-                NSLog("--------->@@@@@@[IP]By pass host:[\(session.host):\(session.port)]")
+//                NSLog("--------->@@@@@@[IP]By pass host:[\(session.host):\(session.port)]")
                 return nil
         }
 
@@ -73,7 +73,7 @@ open class HOPIPRangeRule: Rule {
                 return adapterFactory
             }
         }
-        NSLog("--------->[IP]ByPass host:[\(session.host):\(session.port)]")
+//        NSLog("--------->[IP]ByPass host:[\(session.host):\(session.port)]")
         return nil
     }
 }

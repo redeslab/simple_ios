@@ -122,12 +122,11 @@ class HOPAdapter: AdapterSocket {
                 case .readingSetupACKLen, .readingProbACKLen :
                         guard data.count == HOPAdapter.PACK_HEAD_SIZE else {
                                  NSLog("--------->[\(objID)]didRead data.count [\(data.count)]---")
-                                throw HopError.minerErr("miner setup lent protocol failed")
+                                throw HopError.minerErr("--------->miner setup lent protocol failed")
                         }
                         
                         let len = data.ToInt()
                         if len > HopMessage.MAX_BUFFER_SIZE{
-                                NSLog("--------->[\(objID)]didRead too big data len[\(len)]---")
                                 throw HopError.minerErr("--------->didRead[\(objID)]too big data len[\(len)]")
                         }
                         
@@ -145,7 +144,7 @@ class HOPAdapter: AdapterSocket {
                         let obj = JSON(data)
                         guard obj["Success"].bool == true else{
                                 NSLog("--------->didRead[\(objID)]miner setup protocol failed]")
-                                throw HopError.minerErr("miner setup protocol failed")
+                                throw HopError.minerErr("--------->miner setup protocol failed")
                         }
                         
                         internalStatus = .readingProbACKLen
@@ -159,7 +158,7 @@ class HOPAdapter: AdapterSocket {
                         let obj = JSON(decoded_data)
                         guard obj["Success"].bool == true else{
                                 NSLog("--------->didRead[\(objID)]miner readingProbACK failed]")
-                                throw HopError.minerErr("miner readingProbACK failed")
+                                throw HopError.minerErr("--------->miner readingProbACK failed")
                         }
                         
                         internalStatus = .forwarding
@@ -237,7 +236,7 @@ class HOPAdapter: AdapterSocket {
                 let len = data.ToInt()
                 self.readingStatus = .readingContent
                 self.socket.readDataTo(length: len)
-                NSLog("--------->[\(objID)]XXXXXX need to read len [\(len)]---")
+//                NSLog("--------->[\(objID)]XXXXXX need to read len [\(len)]---")
         }
         
         func readEncoded(data:Data) throws-> Data {

@@ -11,9 +11,9 @@ import NEKit
 import SwiftyJSON
 
 extension Data {
-    var hexString: String {
-        return self.reduce("", { $0 + String(format: "%02x", $1) })
-    }
+        var hexString: String {
+                return self.reduce("", { $0 + String(format: "%02x", $1) })
+        }
 }
 
 class PacketTunnelProvider: NEPacketTunnelProvider {
@@ -37,7 +37,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                         NSLog("--------->Options is empty ......")
                         return
                 }
-
+                
                 do {
                         try SimpleVpnService.pInst.setup(param: ops)
                         
@@ -73,6 +73,22 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                                 if (self.enablePacketProcessing){
                                         self.interface = TUNInterface(packetFlow: self.packetFlow)
                                         
+                                        let fakeIPPool = try! IPPool(range: IPRange(startIP: IPAddress(fromString: "198.18.1.1")!,
+                                                                                    endIP: IPAddress(fromString: "198.18.255.255")!))
+                                        let dnsServer = DNSServer(address: IPAddress(fromString: "198.18.0.1")!,
+                                                                  port: NEKit.Port(port: 53),
+                                                                  fakeIPPool: fakeIPPool)
+                                        
+                                        let resolver = UDPDNSResolver(address: IPAddress(fromString: "8.8.8.8")!,
+                                                                      port: NEKit.Port(port: 53))
+                                        dnsServer.registerResolver(resolver)
+                                        self.interface.register(stack: dnsServer)
+                                        
+                                        DNSServer.currentServer = dnsServer
+                                        
+                                        //                                        let udpStack = UDPDirectStack()
+                                        //                                        self.interface.register(stack: udpStack)
+                                        
                                         let tcpStack = TCPStack.stack
                                         tcpStack.proxyServer = self.proxyServer
                                         self.interface.register(stack:tcpStack)
@@ -81,9 +97,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                         })
                         
                 }catch let err{
-                       completionHandler(err)
-                       NSLog("--------->startTunnel failed\n[\(err.localizedDescription)]")
-               }
+                        completionHandler(err)
+                        NSLog("--------->startTunnel failed\n[\(err.localizedDescription)]")
+                }
         }
         
         func initSetting()throws -> NEPacketTunnelNetworkSettings {
@@ -92,21 +108,21 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 let ipv4Settings = NEIPv4Settings.init(addresses: ["10.0.0.8"], subnetMasks: ["255.255.255.0"])
                 NSLog("--------->Packet process 2222 status[\(self.enablePacketProcessing)]......")
                 if enablePacketProcessing {
-                    ipv4Settings.includedRoutes = [NEIPv4Route.default()]
-                    ipv4Settings.excludedRoutes = [
-                        NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
-                        NEIPv4Route(destinationAddress: "100.64.0.0", subnetMask: "255.192.0.0"),
-                        NEIPv4Route(destinationAddress: "127.0.0.0", subnetMask: "255.0.0.0"),
-                        NEIPv4Route(destinationAddress: "169.254.0.0", subnetMask: "255.255.0.0"),
-                        NEIPv4Route(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0"),
-                        NEIPv4Route(destinationAddress: "192.168.0.0", subnetMask: "255.255.0.0"),
-                        NEIPv4Route(destinationAddress: "17.0.0.0", subnetMask: "255.0.0.0"),
-                    ]
+                        ipv4Settings.includedRoutes = [NEIPv4Route.default()]
+                        ipv4Settings.excludedRoutes = [
+                                NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
+                                NEIPv4Route(destinationAddress: "100.64.0.0", subnetMask: "255.192.0.0"),
+                                NEIPv4Route(destinationAddress: "127.0.0.0", subnetMask: "255.0.0.0"),
+                                NEIPv4Route(destinationAddress: "169.254.0.0", subnetMask: "255.255.0.0"),
+                                NEIPv4Route(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0"),
+                                NEIPv4Route(destinationAddress: "192.168.0.0", subnetMask: "255.255.0.0"),
+                                NEIPv4Route(destinationAddress: "17.0.0.0", subnetMask: "255.0.0.0"),
+                        ]
                 }
                 
                 networkSettings.ipv4Settings = ipv4Settings;
                 networkSettings.mtu = NSNumber.init(value: 1500)
-
+                
                 let proxySettings = NEProxySettings.init()
                 proxySettings.httpEnabled = true;
                 proxySettings.httpServer = NEProxyServer.init(address: proxyServerAddress, port: Int(proxyServerPort))
@@ -130,13 +146,13 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 RuleManager.currentManager = RuleManager(fromRules: [hopRule, ipRange], appendDirect: true)
                 return networkSettings
         }
-
+        
         override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
                 NSLog("--------->Tunnel stopping......")
                 completionHandler()
                 self.exit()
         }
-
+        
         override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?) {
                 NSLog("--------->Handle App Message......")
                 
@@ -147,26 +163,26 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                         HOPDomainsRule.ISGlobalMode = is_global!
                         NSLog("--------->Global model changed...\(HOPDomainsRule.ISGlobalMode)...")
                 }
-            
+                
                 let gt_status = param["GetModel"].bool
                 if gt_status != nil{
                         guard let data = try? JSON(["Global": HOPDomainsRule.ISGlobalMode]).rawData() else{
                                 return
                         }
                         NSLog("--------->App is querying golbal model [\(HOPDomainsRule.ISGlobalMode)]")
-                    
+                        
                         guard let handler = completionHandler else{
                                 return
                         }
                         handler(data)
                 }
         }
-
+        
         override func sleep(completionHandler: @escaping () -> Void) {
                 NSLog("-------->sleep......")
                 completionHandler()
         }
-
+        
         override func wake() {
                 NSLog("-------->wake......")
         }
@@ -178,10 +194,10 @@ extension PacketTunnelProvider: ProtocolDelegate{
         private func exit(){
                 NSLog("--------->Packet process 3333 status[\(self.enablePacketProcessing)]......")
                 if enablePacketProcessing {
-                    interface.stop()
-                    interface = nil
-                    DNSServer.currentServer = nil
-
+                        interface.stop()
+                        interface = nil
+                        DNSServer.currentServer = nil
+                        
                 }
                 RawSocketFactory.TunnelProvider = nil
                 proxyServer.stop()
