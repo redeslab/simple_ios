@@ -109,16 +109,16 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 NSLog("--------->Packet process 2222 status[\(self.enablePacketProcessing)]......")
                 if enablePacketProcessing {
                         ipv4Settings.includedRoutes = [NEIPv4Route.default()]
-                        ipv4Settings.excludedRoutes = [
-                                NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
-                                NEIPv4Route(destinationAddress: "100.64.0.0", subnetMask: "255.192.0.0"),
-                                NEIPv4Route(destinationAddress: "127.0.0.0", subnetMask: "255.0.0.0"),
-                                NEIPv4Route(destinationAddress: "169.254.0.0", subnetMask: "255.255.0.0"),
-                                NEIPv4Route(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0"),
-                                NEIPv4Route(destinationAddress: "192.168.0.0", subnetMask: "255.255.0.0"),
-                                NEIPv4Route(destinationAddress: "17.0.0.0", subnetMask: "255.0.0.0"),
-                        ]
                 }
+                ipv4Settings.excludedRoutes = [
+                        NEIPv4Route(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
+                        NEIPv4Route(destinationAddress: "100.64.0.0", subnetMask: "255.192.0.0"),
+                        NEIPv4Route(destinationAddress: "127.0.0.0", subnetMask: "255.0.0.0"),
+                        NEIPv4Route(destinationAddress: "169.254.0.0", subnetMask: "255.255.0.0"),
+                        NEIPv4Route(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0"),
+                        NEIPv4Route(destinationAddress: "192.168.0.0", subnetMask: "255.255.0.0"),
+                        NEIPv4Route(destinationAddress: "17.0.0.0", subnetMask: "255.0.0.0"),
+                ]
                 
                 networkSettings.ipv4Settings = ipv4Settings;
                 networkSettings.mtu = NSNumber.init(value: 1500)
