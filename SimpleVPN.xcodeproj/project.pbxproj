@@ -52,6 +52,10 @@
 		69A47D70240EB8C100C86CFF /* HopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A47D6E240EB8C100C86CFF /* HopMessage.swift */; };
 		69C112D42515DC7C00C5E9F5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C112D32515DC7C00C5E9F5 /* Wallet.swift */; };
 		69D1DFAA240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1DFA9240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift */; };
+		69F65FED2871839A00BC7FAE /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */; };
+		69F65FEE2871839A00BC7FAE /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */; };
+		69F65FF0287183D700BC7FAE /* rule.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F65FEF287183D700BC7FAE /* rule.txt */; };
+		69F65FF1287183D700BC7FAE /* rule.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F65FEF287183D700BC7FAE /* rule.txt */; };
 		69FA418A2404B348005CF3FA /* DataShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41892404B348005CF3FA /* DataShareManager.swift */; };
 		69FA418B2404B352005CF3FA /* DataShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41892404B348005CF3FA /* DataShareManager.swift */; };
 		69FA41932404DBCD005CF3FA /* HopConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41912404DBCD005CF3FA /* HopConstants.swift */; };
@@ -160,6 +164,8 @@
 		69A47D6E240EB8C100C86CFF /* HopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopMessage.swift; sourceTree = "<group>"; };
 		69C112D32515DC7C00C5E9F5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		69D1DFA9240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		69F65FEF287183D700BC7FAE /* rule.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rule.txt; sourceTree = "<group>"; };
 		69FA41892404B348005CF3FA /* DataShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataShareManager.swift; sourceTree = "<group>"; };
 		69FA41912404DBCD005CF3FA /* HopConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopConstants.swift; sourceTree = "<group>"; };
 		69FA419524050059005CF3FA /* HopError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopError.swift; sourceTree = "<group>"; };
@@ -323,6 +329,8 @@
 		69E0BEBE240838CA00E0B982 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				69F65FEF287183D700BC7FAE /* rule.txt */,
+				69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */,
 				696A71EB25146725004EA5DE /* PasswordViewController.swift */,
 				696A71ED251467DA004EA5DE /* QRCodeShowViewController.swift */,
 				6940EC8F240A75460029F526 /* ScannerViewController.swift */,
@@ -425,6 +433,7 @@
 				693E92D024A8816200149A75 /* Localizable.strings in Resources */,
 				69980C3423F78D3F00829B09 /* Assets.xcassets in Resources */,
 				2B0016A72835D88B00ED4DAC /* AdvertiseView.xib in Resources */,
+				69F65FF0287183D700BC7FAE /* rule.txt in Resources */,
 				69980C3223F78D3E00829B09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F65FF1287183D700BC7FAE /* rule.txt in Resources */,
 				7C1E58AE25417EDD0032F005 /* gfw.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +488,7 @@
 				696A71F02514680A004EA5DE /* Utils+ViewController.swift in Sources */,
 				695E4C392401778600A13631 /* SVN.xcdatamodeld in Sources */,
 				2B865BCA2835044700B57529 /* AdvertiseView.swift in Sources */,
+				69F65FED2871839A00BC7FAE /* RoundedCornerView.swift in Sources */,
 				698A514323FD58DC00836E26 /* Utils.swift in Sources */,
 				69980C2923F78D3E00829B09 /* AppDelegate.swift in Sources */,
 				696A71EE251467DA004EA5DE /* QRCodeShowViewController.swift in Sources */,
@@ -502,6 +513,7 @@
 				69FA419724050059005CF3FA /* HopError.swift in Sources */,
 				69FA41932404DBCD005CF3FA /* HopConstants.swift in Sources */,
 				69A47D70240EB8C100C86CFF /* HopMessage.swift in Sources */,
+				69F65FEE2871839A00BC7FAE /* RoundedCornerView.swift in Sources */,
 				69FA418B2404B352005CF3FA /* DataShareManager.swift in Sources */,
 				69A47D6A240EB1DD00C86CFF /* WalletParam.swift in Sources */,
 				69980C5B23F7B3CD00829B09 /* PacketTunnelProvider.swift in Sources */,
@@ -686,9 +698,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = src/simpleVPN.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -705,7 +717,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple;
 				PRODUCT_NAME = SimpleVPN;
-				PROVISIONING_PROFILE_SPECIFIER = dev_simple_pirate;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -717,10 +729,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = src/simpleVPN.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = 6A53CAFMZ9;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -736,7 +748,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple;
 				PRODUCT_NAME = SimpleVPN;
-				PROVISIONING_PROFILE_SPECIFIER = release_simple;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -746,9 +758,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -767,7 +779,7 @@
 				OS_ACTIVITY_MODE = default;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple.ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dev_simple_pirate_ex;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -778,10 +790,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = 6A53CAFMZ9;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -799,7 +811,7 @@
 				OS_ACTIVITY_MODE = default;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple.ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = release_simple_ex;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
