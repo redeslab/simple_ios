@@ -52,7 +52,6 @@
 		69A47D70240EB8C100C86CFF /* HopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A47D6E240EB8C100C86CFF /* HopMessage.swift */; };
 		69C112D42515DC7C00C5E9F5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C112D32515DC7C00C5E9F5 /* Wallet.swift */; };
 		69D1DFAA240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1DFA9240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift */; };
-		69F65FED2871839A00BC7FAE /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */; };
 		69F65FEE2871839A00BC7FAE /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */; };
 		69F65FF0287183D700BC7FAE /* rule.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F65FEF287183D700BC7FAE /* rule.txt */; };
 		69F65FF1287183D700BC7FAE /* rule.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F65FEF287183D700BC7FAE /* rule.txt */; };
@@ -391,7 +390,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = hyperorchid;
 				TargetAttributes = {
 					69980C2423F78D3E00829B09 = {
@@ -488,7 +487,6 @@
 				696A71F02514680A004EA5DE /* Utils+ViewController.swift in Sources */,
 				695E4C392401778600A13631 /* SVN.xcdatamodeld in Sources */,
 				2B865BCA2835044700B57529 /* AdvertiseView.swift in Sources */,
-				69F65FED2871839A00BC7FAE /* RoundedCornerView.swift in Sources */,
 				698A514323FD58DC00836E26 /* Utils.swift in Sources */,
 				69980C2923F78D3E00829B09 /* AppDelegate.swift in Sources */,
 				696A71EE251467DA004EA5DE /* QRCodeShowViewController.swift in Sources */,
