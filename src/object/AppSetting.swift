@@ -32,7 +32,7 @@ class AppSetting:NSObject{
         
         public static func initSetting(){
                 
-                IosLibInitSystem(AppSetting.AInst)
+                SimpleInitSystem(AppSetting.AInst)
                 
                 let context = DataShareManager.privateQueueContext()
                 
@@ -90,7 +90,7 @@ class AppSetting:NSObject{
         }
 }
 
-extension AppSetting : IosLibUICallBackProtocol{
+extension AppSetting : SimpleUICallBackProtocol{
         func log(_ str: String?) {
                 NSLog("======>[LibLog]\(String(describing: str))")
         }

@@ -34,7 +34,7 @@ class AdItem : NSObject {
         }
         
         private static func LoadAdListFromBlockChain()->[AdItem]{
-                guard let adData = IosLibAdvertiseList() else{
+                guard let adData = SimpleAdvertiseList() else{
                         print("------>>>no valid ad data on chain")
                         return []
                 }
