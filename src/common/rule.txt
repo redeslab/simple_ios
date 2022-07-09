@@ -2486,4 +2486,5 @@
 \.ggpht.com\.
 \.line-apps.com\.
 \.line-scdn.net\.
-\.api.snapchat.com\.
+\.snapchat.com\.
+\.gvt1.com\.

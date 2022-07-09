@@ -98,7 +98,7 @@ class Wallet:NSObject{
                 return SimpleSubPriKeyData()
         }
         
-        public func AesKeyWithForMiner(miner:String)->Data?{
-                return SimpleAesKeyForMiner(miner)
+        public func AesKeyWithForMiner(miner:String)->String?{
+                return SimpleAesKeyBase64ForMiner(miner)
         }
 }

@@ -12,6 +12,8 @@
 		2B865BCA2835044700B57529 /* AdvertiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B865BC92835044700B57529 /* AdvertiseView.swift */; };
 		2B866E9828431F240038AC12 /* simple.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B866E9728431F240038AC12 /* simple.xcframework */; };
 		2B87493228714CDB008FF69B /* tun2Simple.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B87493128714CDB008FF69B /* tun2Simple.xcframework */; };
+		2BE8AEBB28790F2C007E024E /* bypass2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BE8AEBA28790F2C007E024E /* bypass2.txt */; };
+		2BE8AEBC28790F2C007E024E /* bypass2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BE8AEBA28790F2C007E024E /* bypass2.txt */; };
 		2BFF8D2A2830F64F00D4414A /* CryptoSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BB8732681CA6000524FC6 /* CryptoSwift.xcframework */; };
 		2BFF8D2B2830F64F00D4414A /* CryptoSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 699BB8732681CA6000524FC6 /* CryptoSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BFF8D2C2830F65C00D4414A /* CryptoSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BB8732681CA6000524FC6 /* CryptoSwift.xcframework */; };
@@ -110,6 +112,7 @@
 		2B865BC92835044700B57529 /* AdvertiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseView.swift; sourceTree = "<group>"; };
 		2B866E9728431F240038AC12 /* simple.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = simple.xcframework; path = bin/simple.xcframework; sourceTree = "<group>"; };
 		2B87493128714CDB008FF69B /* tun2Simple.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = tun2Simple.xcframework; path = bin/tun2Simple.xcframework; sourceTree = "<group>"; };
+		2BE8AEBA28790F2C007E024E /* bypass2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bypass2.txt; sourceTree = "<group>"; };
 		691CCF9F23F8240D007768DF /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		6924223F240D368F00590536 /* MinerChooseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerChooseTableViewController.swift; sourceTree = "<group>"; };
 		693E92CD24A880E500149A75 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -328,6 +331,7 @@
 		69E0BEBE240838CA00E0B982 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				2BE8AEBA28790F2C007E024E /* bypass2.txt */,
 				69F65FEF287183D700BC7FAE /* rule.txt */,
 				69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */,
 				696A71EB25146725004EA5DE /* PasswordViewController.swift */,
@@ -427,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				698A514423FD5BC900836E26 /* gfw.plist in Resources */,
+				2BE8AEBB28790F2C007E024E /* bypass2.txt in Resources */,
 				693E92D624A89A9D00149A75 /* InfoPlist.strings in Resources */,
 				69980C3723F78D3F00829B09 /* LaunchScreen.storyboard in Resources */,
 				693E92D024A8816200149A75 /* Localizable.strings in Resources */,
@@ -442,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F65FF1287183D700BC7FAE /* rule.txt in Resources */,
+				2BE8AEBC28790F2C007E024E /* bypass2.txt in Resources */,
 				7C1E58AE25417EDD0032F005 /* gfw.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

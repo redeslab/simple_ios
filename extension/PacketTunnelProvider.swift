@@ -125,21 +125,41 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 }
 
 extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
+        func aesKeyBase64() -> String {
+
+                return WalletParam.pInst.aesKey
+        }
+        
+        func loadIps() -> String {
+                
+                return ""
+//                guard let filepath = Bundle.main.path(forResource: "bypass2", ofType: "txt") else{
+//                        NSLog("------>>>failed to find ip text path")
+//                        return ""
+//                }
+//                guard let contents = try? String(contentsOfFile: filepath) else{
+//                        NSLog("------>>>failed to read ip txt")
+//                        return ""
+//                }
+//                //                NSLog("------>>>rule contents:\(contents)")
+//                return contents
+        }
+        
+        func mtu() -> Int {
+                return (1<<16)
+        }
+        
+        func safeConn(_ fd: Int32) -> Bool {
+                return true
+        }
+        
         
         func address() -> String {
                 return WalletParam.pInst.selfAddr
         }
         
-        func aesKey() -> Data? {
-                return WalletParam.pInst.aesKey
-        }
-        
         func minerNetAddr() -> String {
                 return WalletParam.pInst.minerNetAddr
-        }
-        
-        func protect(_ fd: Int32) -> Bool {
-                return true
         }
         
         func tunClosed() throws {

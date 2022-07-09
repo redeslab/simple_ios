@@ -15,7 +15,7 @@ public class WalletParam:NSObject{
         public var minerAddress:String!
         public var minerNetAddr:String!
         
-        public var aesKey:Data!
+        public var aesKey:String!
         public var lastMsg:Data!
         var isDebug:Bool = true
         
@@ -28,7 +28,7 @@ public class WalletParam:NSObject{
                 self.isDebug            = param["IS_TEST"] as? Bool ?? true
                 self.minerAddress       = (param["MINER_ADDR"] as! String)
                 self.selfAddr     = (param["USER_SUB_ADDR"] as! String)
-                self.aesKey             = param["AES_KEY"] as? Data
+                self.aesKey             = param["AES_KEY"] as? String
                 
                 let ip         = (param["MINER_IP"] as! String)
                 let port            = (param["MINER_PORT"] as! Int)
