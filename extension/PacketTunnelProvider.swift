@@ -125,26 +125,37 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 }
 
 extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
+        func loadInnerIps() -> String {
+                guard let filepath = Bundle.main.path(forResource: "bypass2", ofType: "txt") else{
+                        NSLog("------>>>failed to find ip text path")
+                        return ""
+                }
+                guard let contents = try? String(contentsOfFile: filepath) else{
+                        NSLog("------>>>failed to read ip txt")
+                        return ""
+                }
+                //                NSLog("------>>>rule contents:\(contents)")
+                return contents
+        }
+        
+        func loadMustHitIps() -> String {
+                guard let filepath = Bundle.main.path(forResource: "must_hit", ofType: "txt") else{
+                        NSLog("------>>>failed to find ip text path")
+                        return ""
+                }
+                guard let contents = try? String(contentsOfFile: filepath) else{
+                        NSLog("------>>>failed to read ip txt")
+                        return ""
+                }
+                //                NSLog("------>>>rule contents:\(contents)")
+                return contents
+        }
+        
         func aesKeyBase64() -> String {
 
                 return WalletParam.pInst.aesKey
         }
-        
-        func loadIps() -> String {
-                
-                return ""
-//                guard let filepath = Bundle.main.path(forResource: "bypass2", ofType: "txt") else{
-//                        NSLog("------>>>failed to find ip text path")
-//                        return ""
-//                }
-//                guard let contents = try? String(contentsOfFile: filepath) else{
-//                        NSLog("------>>>failed to read ip txt")
-//                        return ""
-//                }
-//                //                NSLog("------>>>rule contents:\(contents)")
-//                return contents
-        }
-        
+
         func mtu() -> Int {
                 return (1<<18)
         }
