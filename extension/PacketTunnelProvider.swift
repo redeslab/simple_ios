@@ -157,7 +157,7 @@ extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         }
 
         func mtu() -> Int {
-                return (1<<18)
+                return (1<<16)
         }
         
         func safeConn(_ fd: Int32) -> Bool {
