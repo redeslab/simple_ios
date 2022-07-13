@@ -65,7 +65,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 let networkSettings = NEPacketTunnelNetworkSettings.init(tunnelRemoteAddress: proxyServerAddress)
                 networkSettings.mtu = NSNumber.init(value: 1500)
                 
-                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8", "1.1.1.1"])
+                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8"])
                 dnsSettings.matchDomains = [""]
                 networkSettings.dnsSettings = dnsSettings
                 
@@ -157,7 +157,7 @@ extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         }
 
         func mtu() -> Int {
-                return (1<<16)
+                return (1<<17)
         }
         
         func safeConn(_ fd: Int32) -> Bool {
