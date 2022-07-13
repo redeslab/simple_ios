@@ -2488,3 +2488,4 @@
 \.line-scdn.net\.
 \.snapchat.com\.
 \.gvt1.com\.
+\.linecorp.com\.
