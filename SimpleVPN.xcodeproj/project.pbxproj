@@ -35,6 +35,7 @@
 		698A514323FD58DC00836E26 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A514223FD58DC00836E26 /* Utils.swift */; };
 		698A514423FD5BC900836E26 /* gfw.plist in Resources */ = {isa = PBXBuildFile; fileRef = 698A513E23FD08B900836E26 /* gfw.plist */; };
 		698D07622567700200A55656 /* UserManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D07612567700200A55656 /* UserManualViewController.swift */; };
+		69916A08287FFC0C0076133E /* RuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69916A06287FFBCF0076133E /* RuleManager.swift */; };
 		69980C2923F78D3E00829B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69980C2823F78D3E00829B09 /* AppDelegate.swift */; };
 		69980C2B23F78D3E00829B09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69980C2A23F78D3E00829B09 /* SceneDelegate.swift */; };
 		69980C2D23F78D3E00829B09 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69980C2C23F78D3E00829B09 /* HomeVC.swift */; };
@@ -141,6 +142,7 @@
 		698A514223FD58DC00836E26 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		698D07612567700200A55656 /* UserManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManualViewController.swift; sourceTree = "<group>"; };
 		698D07692567A4C000A55656 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		69916A06287FFBCF0076133E /* RuleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleManager.swift; sourceTree = "<group>"; };
 		69980C2523F78D3E00829B09 /* SimpleVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69980C2823F78D3E00829B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69980C2A23F78D3E00829B09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		69AD9FE9252071C10077CFCF /* object */ = {
 			isa = PBXGroup;
 			children = (
+				69916A06287FFBCF0076133E /* RuleManager.swift */,
 				696B02D325187B8E00F76A51 /* AppSetting.swift */,
 				69C112D32515DC7C00C5E9F5 /* Wallet.swift */,
 				7C3D0523252AA5B800B59255 /* Miner.swift */,
@@ -492,6 +495,7 @@
 				696B02E9251A079500F76A51 /* RoundedCornerView.swift in Sources */,
 				698D07622567700200A55656 /* UserManualViewController.swift in Sources */,
 				69A47D6F240EB8C100C86CFF /* HopMessage.swift in Sources */,
+				69916A08287FFC0C0076133E /* RuleManager.swift in Sources */,
 				69980C2D23F78D3E00829B09 /* HomeVC.swift in Sources */,
 				6940EC90240A75460029F526 /* ScannerViewController.swift in Sources */,
 				69FA419624050059005CF3FA /* HopError.swift in Sources */,
