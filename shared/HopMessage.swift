@@ -16,11 +16,11 @@ public class HopMessage:NSObject{
         public static func SetupMsg(iv:Data,
                                     subAddr:String)throws -> Data{
                 guard let iv_data = try? JSONSerialization.data(withJSONObject: iv.bytes, options: []) else{
-                        throw HopError.msg("iv data to json err:")
+                        throw AppErr.msg("iv data to json err:")
                 }
                 
                 guard let iv_str = String(data:iv_data, encoding: .utf8) else{
-                        throw HopError.msg("iv json data to string failed")
+                        throw AppErr.msg("iv json data to string failed")
                 }
                 
                 let syn = String(format: SetupSynFormat, iv_str, subAddr)

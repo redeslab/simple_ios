@@ -49,18 +49,19 @@ class HomeVC: UIViewController {
                 
                 setPoolMinersAddress()
                 
+                _ = RuleManager.rInst
+                
                 NotificationCenter.default.addObserver(self, selector: #selector(VPNStatusDidChange(_:)),
                                                        name: NSNotification.Name.NEVPNStatusDidChange, object: nil)
                 
                 NotificationCenter.default.addObserver(self, selector: #selector(setMinerDetails(_:)),
-                                                       name: HopConstants.NOTI_MINER_CACHE_LOADED.name, object: nil)
+                                                       name: AppConstants.NOTI_MINER_CACHE_LOADED.name, object: nil)
                 
                 NotificationCenter.default.addObserver(self, selector: #selector(minerChanged(_:)),
-                                                       name: HopConstants.NOTI_MINER_INUSE_CHANGED.name, object: nil)
+                                                       name: AppConstants.NOTI_MINER_INUSE_CHANGED.name, object: nil)
         }
         override func viewDidAppear(_ animated: Bool) {
                 super.viewDidAppear(animated)
-                
                 setupAdScrollView()
         }
         override func viewDidDisappear(_ animated: Bool) {
@@ -104,7 +105,7 @@ class HomeVC: UIViewController {
                 guard  Wallet.WInst.IsOpen() else{
                         
                         guard let subAddr = Wallet.WInst.SubAddress,
-                              let password = AppSetting.readPassword(service: HopConstants.SERVICE_NME_FOR_OSS, account: subAddr),
+                              let password = AppSetting.readPassword(service: AppConstants.SERVICE_NME_FOR_OSS, account: subAddr),
                               true == Wallet.WInst.OpenWallet(auth: password) else{
                                 
                                 self.ShowOnePassword() {
@@ -142,7 +143,7 @@ class HomeVC: UIViewController {
                 self.showIndicator(withTitle: "VPN", and: "Starting VPN".locStr)
                 
                 guard let aesKey = Wallet.WInst.AesKeyWithForMiner(miner: miner) else {
-                        throw HopError.wallet("No valid key data".locStr)
+                        throw AppErr.wallet("No valid key data".locStr)
                 }
                 let (mIP, mPort) = try Miner.prepareMiner(mid: miner)
                 let options = ["AES_KEY":aesKey as NSObject,

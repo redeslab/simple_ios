@@ -18,32 +18,32 @@ class Utils: NSObject {
                 super.init()
         }
         
-        static func initDomains() throws{
-                guard let url = Bundle.main.path(forResource: "gfw", ofType: "plist") else{
-                        throw HopError.hopProtocol("no gfw file")
-                }
-                
-                guard let dic = NSDictionary(contentsOfFile: url) as? [String:NSObject],
-//                      let cnDic = dic["TEST"] as? [String:NSObject] else{
-                      let cnDic = dic["CN"] as? [String:NSObject] else{
-                        throw HopError.hopProtocol("gfw file ")
-                }
-                
-                guard let domains = cnDic["domains"] as? [String : NSObject] else{
-                        throw HopError.hopProtocol("invalid domain names")
-                }
-                guard let ips = cnDic["iprange"] as? [String : NSObject] else{
-                        throw HopError.hopProtocol("invalid ip ranges")
-                }
-                
-                guard let ex = cnDic["exclude"] as? [String] else{
-                        throw HopError.hopProtocol("invalid exclusive domains")
-                }
-                
-                Utils.Exclusives = ex
-                Utils.Domains = domains
-                Utils.IPRange = ips
-        } 
+//        static func initDomains() throws{
+//                guard let url = Bundle.main.path(forResource: "gfw", ofType: "plist") else{
+//                        throw HopError.hopProtocol("no gfw file")
+//                }
+//                
+//                guard let dic = NSDictionary(contentsOfFile: url) as? [String:NSObject],
+////                      let cnDic = dic["TEST"] as? [String:NSObject] else{
+//                      let cnDic = dic["CN"] as? [String:NSObject] else{
+//                        throw HopError.hopProtocol("gfw file ")
+//                }
+//                
+//                guard let domains = cnDic["domains"] as? [String : NSObject] else{
+//                        throw HopError.hopProtocol("invalid domain names")
+//                }
+//                guard let ips = cnDic["iprange"] as? [String : NSObject] else{
+//                        throw HopError.hopProtocol("invalid ip ranges")
+//                }
+//                
+//                guard let ex = cnDic["exclude"] as? [String] else{
+//                        throw HopError.hopProtocol("invalid exclusive domains")
+//                }
+//                
+//                Utils.Exclusives = ex
+//                Utils.Domains = domains
+//                Utils.IPRange = ips
+//        } 
         
         static func getJavascriptProxyForRules (domains:Array<String>, address:String, port:String) -> String {
             

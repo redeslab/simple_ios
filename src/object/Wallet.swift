@@ -22,7 +22,7 @@ class Wallet:NSObject{
         
         override init() {
                 super.init()
-                guard let core_data = NSManagedObject.findOneEntity(HopConstants.DBNAME_WALLET,
+                guard let core_data = NSManagedObject.findOneEntity(AppConstants.DBNAME_WALLET,
                                                               context: DataShareManager.privateQueueContext()) as? CDWallet else{
                                 return
                 }
@@ -60,7 +60,7 @@ class Wallet:NSObject{
                 WInst.initByJson(data)
                 
                 let context = DataShareManager.privateQueueContext()
-                var core_data = NSManagedObject.findOneEntity(HopConstants.DBNAME_WALLET,
+                var core_data = NSManagedObject.findOneEntity(AppConstants.DBNAME_WALLET,
                                                               context: context) as? CDWallet
                 if core_data == nil{
                         core_data = CDWallet(context: context)

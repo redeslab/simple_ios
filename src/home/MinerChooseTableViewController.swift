@@ -28,10 +28,10 @@ class MinerChooseViewController: UIViewController {
                         Miner.LoadCache()
                 }
                 NotificationCenter.default.addObserver(self, selector: #selector(minerSynced(_:)),
-                                                       name: HopConstants.NOTI_MINER_SYNCED.name, object: nil)
+                                                       name: AppConstants.NOTI_MINER_SYNCED.name, object: nil)
                 
                 NotificationCenter.default.addObserver(self, selector: #selector(minerSynced(_:)),
-                                                       name: HopConstants.NOTI_MINER_CACHE_LOADED.name, object: nil)
+                                                       name: AppConstants.NOTI_MINER_CACHE_LOADED.name, object: nil)
         }
         deinit {
                 NotificationCenter.default.removeObserver(self)
@@ -50,7 +50,7 @@ class MinerChooseViewController: UIViewController {
                 if curMiner?.lowercased() != AppSetting.coreData?.minerAddrInUsed?.lowercased(){
                         AppSetting.coreData?.minerAddrInUsed = curMiner
                         DataShareManager.saveContext(DataShareManager.privateQueueContext())
-                        PostNoti(HopConstants.NOTI_MINER_INUSE_CHANGED)
+                        PostNoti(AppConstants.NOTI_MINER_INUSE_CHANGED)
                 }
         }
         

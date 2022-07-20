@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum HopError: Error,LocalizedError {
+public enum AppErr: Error,LocalizedError {
 
         case wallet(String)
         case eth(String)
@@ -17,7 +17,7 @@ public enum HopError: Error,LocalizedError {
         case txWire(String)
         case minerErr(String)
         case msg(String)
-        case hopProtocol(String)
+        case rule(String)
         
         public var errorDescription: String? {
         
@@ -29,7 +29,7 @@ public enum HopError: Error,LocalizedError {
         case .txWire(let err): return "[Transaction Wire]:=>[\(err)]"
         case .minerErr(let err): return "[Miner Connection]:=>[\(err)]"
         case .msg(let err): return "[Message Create]:=>[\(err)]"
-        case .hopProtocol(let err): return "[Hyper Orchid Protocol ]:=>[\(err)]"
+        case .rule(let err): return "[ip and dns rule]:=>[\(err)]"
         }
     }
 }

@@ -36,7 +36,7 @@ class AppSetting:NSObject{
                 
                 let context = DataShareManager.privateQueueContext()
                 
-                var setting = NSManagedObject.findOneEntity(HopConstants.DBNAME_APPSETTING,
+                var setting = NSManagedObject.findOneEntity(AppConstants.DBNAME_APPSETTING,
                                                             context: context) as? CDAppSetting
                 if setting == nil{
                         setting = CDAppSetting(context: context)

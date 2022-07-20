@@ -91,7 +91,7 @@ class NewAccountViewController: UIViewController {
                                 return
                         }
                         _ = AppSetting.save(password: password,
-                                            service: HopConstants.SERVICE_NME_FOR_OSS,
+                                            service: AppConstants.SERVICE_NME_FOR_OSS,
                                             account: Wallet.WInst.SubAddress!)
                         DispatchQueue.main.async {
                                 self.dismiss(animated: true)
@@ -182,7 +182,7 @@ extension NewAccountViewController: UINavigationControllerDelegate, UIImagePicke
                         }
                         
                         _ = AppSetting.save(password: pwd,
-                                            service: HopConstants.SERVICE_NME_FOR_OSS,
+                                            service: AppConstants.SERVICE_NME_FOR_OSS,
                                             account: Wallet.WInst.SubAddress!)
                         self.dismiss(animated: true)
                 })

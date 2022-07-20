@@ -15,13 +15,14 @@ public struct ScryptParam {
         var S:Int
 }
 
-public struct HopConstants {
+public struct AppConstants {
         static public let EthScanUrl = "https://etherscan.io/tx/"
         
         static public let SALT_LEN = 16
         static public let DBNAME_WALLET = "CDWallet"
         static public let DBNAME_APPSETTING = "CDAppSetting"
         static public let DBNAME_MINER = "CDMiner"
+        static public let DBNAME_RuleVer = "CDRuleVersion"
         static public let SERVICE_NME_FOR_OSS = "com.hop.simple"
         
         

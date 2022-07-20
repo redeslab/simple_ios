@@ -23,7 +23,7 @@ class Miner : NSObject {
         public static func LoadCache(){
                 CachedMiner.removeAll()
                 let dbContext = DataShareManager.privateQueueContext()
-                guard let minerArr = NSManagedObject.findEntity(HopConstants.DBNAME_MINER,
+                guard let minerArr = NSManagedObject.findEntity(AppConstants.DBNAME_MINER,
                                                                 context: dbContext) as? [CDMiner] else{
                         return
                 }
@@ -37,7 +37,7 @@ class Miner : NSObject {
                         CachedMiner[cData.addr!.lowercased()] = cData
                 }
                 
-                PostNoti(HopConstants.NOTI_MINER_CACHE_LOADED)
+                PostNoti(AppConstants.NOTI_MINER_CACHE_LOADED)
         }
         
         
@@ -82,17 +82,17 @@ class Miner : NSObject {
                 
                 DataShareManager.saveContext(dbContext)
                 DataShareManager.syncAllContext(dbContext)
-                PostNoti(HopConstants.NOTI_MINER_CACHE_LOADED)
-                PostNoti(HopConstants.NOTI_MINER_SYNCED)
+                PostNoti(AppConstants.NOTI_MINER_CACHE_LOADED)
+                PostNoti(AppConstants.NOTI_MINER_SYNCED)
         }
         
         public static func prepareMiner(mid:String) throws ->(String, Int32) {
                 
                 guard let m_data = Miner.CachedMiner[mid.lowercased()] else{
-                        throw HopError.minerErr("no such miner details".locStr)
+                        throw AppErr.minerErr("no such miner details".locStr)
                 }
                 guard let host = m_data.host else{
-                        throw HopError.minerErr("invalid miner detail for host".locStr)
+                        throw AppErr.minerErr("invalid miner detail for host".locStr)
                 }
                 let port = SimpleMinerPort(mid)
                 return (host, port)

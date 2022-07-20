@@ -62,13 +62,13 @@
 		69F65FF1287183D700BC7FAE /* rule.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F65FEF287183D700BC7FAE /* rule.txt */; };
 		69FA418A2404B348005CF3FA /* DataShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41892404B348005CF3FA /* DataShareManager.swift */; };
 		69FA418B2404B352005CF3FA /* DataShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41892404B348005CF3FA /* DataShareManager.swift */; };
-		69FA41932404DBCD005CF3FA /* HopConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41912404DBCD005CF3FA /* HopConstants.swift */; };
-		69FA419624050059005CF3FA /* HopError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA419524050059005CF3FA /* HopError.swift */; };
-		69FA419724050059005CF3FA /* HopError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA419524050059005CF3FA /* HopError.swift */; };
+		69FA41932404DBCD005CF3FA /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41912404DBCD005CF3FA /* AppConstants.swift */; };
+		69FA419624050059005CF3FA /* AppErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA419524050059005CF3FA /* AppErr.swift */; };
+		69FA419724050059005CF3FA /* AppErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA419524050059005CF3FA /* AppErr.swift */; };
 		69FA41D3240667E1005CF3FA /* SVN.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 695E4C372401778600A13631 /* SVN.xcdatamodeld */; };
 		7C1E58AE25417EDD0032F005 /* gfw.plist in Resources */ = {isa = PBXBuildFile; fileRef = 698A513E23FD08B900836E26 /* gfw.plist */; };
 		7C3D0524252AA5B800B59255 /* Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D0523252AA5B800B59255 /* Miner.swift */; };
-		7C9D51832532F0710083E2F5 /* HopConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41912404DBCD005CF3FA /* HopConstants.swift */; };
+		7C9D51832532F0710083E2F5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41912404DBCD005CF3FA /* AppConstants.swift */; };
 		7CE0EAFE24204F9E00F23A5A /* SystemSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE0EAFD24204F9E00F23A5A /* SystemSettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -174,8 +174,8 @@
 		69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		69F65FEF287183D700BC7FAE /* rule.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rule.txt; sourceTree = "<group>"; };
 		69FA41892404B348005CF3FA /* DataShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataShareManager.swift; sourceTree = "<group>"; };
-		69FA41912404DBCD005CF3FA /* HopConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopConstants.swift; sourceTree = "<group>"; };
-		69FA419524050059005CF3FA /* HopError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopError.swift; sourceTree = "<group>"; };
+		69FA41912404DBCD005CF3FA /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		69FA419524050059005CF3FA /* AppErr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErr.swift; sourceTree = "<group>"; };
 		69FA41B924061573005CF3FA /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		7C3D0523252AA5B800B59255 /* Miner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miner.swift; sourceTree = "<group>"; };
 		7C5E956725328D2900541CFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -238,8 +238,8 @@
 		6932A18124067F7400D2DA39 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				69FA41912404DBCD005CF3FA /* HopConstants.swift */,
-				69FA419524050059005CF3FA /* HopError.swift */,
+				69FA41912404DBCD005CF3FA /* AppConstants.swift */,
+				69FA419524050059005CF3FA /* AppErr.swift */,
 				695E4C372401778600A13631 /* SVN.xcdatamodeld */,
 				69FA41892404B348005CF3FA /* DataShareManager.swift */,
 				69A47D6E240EB8C100C86CFF /* HopMessage.swift */,
@@ -491,14 +491,14 @@
 				69242240240D368F00590536 /* MinerChooseTableViewController.swift in Sources */,
 				7CE0EAFE24204F9E00F23A5A /* SystemSettingTableViewController.swift in Sources */,
 				696A71F62514891F004EA5DE /* AccountViewController.swift in Sources */,
-				7C9D51832532F0710083E2F5 /* HopConstants.swift in Sources */,
+				7C9D51832532F0710083E2F5 /* AppConstants.swift in Sources */,
 				696B02E9251A079500F76A51 /* RoundedCornerView.swift in Sources */,
 				698D07622567700200A55656 /* UserManualViewController.swift in Sources */,
 				69A47D6F240EB8C100C86CFF /* HopMessage.swift in Sources */,
 				69916A08287FFC0C0076133E /* RuleManager.swift in Sources */,
 				69980C2D23F78D3E00829B09 /* HomeVC.swift in Sources */,
 				6940EC90240A75460029F526 /* ScannerViewController.swift in Sources */,
-				69FA419624050059005CF3FA /* HopError.swift in Sources */,
+				69FA419624050059005CF3FA /* AppErr.swift in Sources */,
 				696A71EC25146725004EA5DE /* PasswordViewController.swift in Sources */,
 				696A71F02514680A004EA5DE /* Utils+ViewController.swift in Sources */,
 				695E4C392401778600A13631 /* SVN.xcdatamodeld in Sources */,
@@ -524,8 +524,8 @@
 			files = (
 				69FA41D3240667E1005CF3FA /* SVN.xcdatamodeld in Sources */,
 				696A71F425146CFB004EA5DE /* Utils.swift in Sources */,
-				69FA419724050059005CF3FA /* HopError.swift in Sources */,
-				69FA41932404DBCD005CF3FA /* HopConstants.swift in Sources */,
+				69FA419724050059005CF3FA /* AppErr.swift in Sources */,
+				69FA41932404DBCD005CF3FA /* AppConstants.swift in Sources */,
 				69A47D70240EB8C100C86CFF /* HopMessage.swift in Sources */,
 				69F65FEE2871839A00BC7FAE /* RoundedCornerView.swift in Sources */,
 				69FA418B2404B352005CF3FA /* DataShareManager.swift in Sources */,

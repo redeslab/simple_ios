@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import CoreData
 
 public class WalletParam:NSObject{
         public static var pInst = WalletParam()
@@ -18,6 +19,8 @@ public class WalletParam:NSObject{
         public var aesKey:String!
         public var lastMsg:Data!
         var isDebug:Bool = true
+        
+        var ruleCoreData:CDRuleVersion!
         
         public override init() {
                 super.init()
@@ -34,5 +37,15 @@ public class WalletParam:NSObject{
                 let port            = (param["MINER_PORT"] as! Int)
                 
                 self.minerNetAddr = String(format: "%@:%d", ip, port)
+                
+                let context = DataShareManager.privateQueueContext()
+                
+                let rVer = NSManagedObject.findOneEntity(AppConstants.DBNAME_RuleVer,
+                                                         context: context) as? CDRuleVersion
+                if rVer == nil{
+                        throw AppErr.rule("no valid dns or ip rules")
+                }
+                
+                self.ruleCoreData = rVer!
         }
 }

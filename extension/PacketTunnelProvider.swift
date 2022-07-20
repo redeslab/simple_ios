@@ -65,7 +65,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 let networkSettings = NEPacketTunnelNetworkSettings.init(tunnelRemoteAddress: proxyServerAddress)
                 networkSettings.mtu = NSNumber.init(value: 1500)
                 
-                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8", "114.114.114.114"])
+                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8"])
                 dnsSettings.matchDomains = [""]
                 networkSettings.dnsSettings = dnsSettings
                 
@@ -126,36 +126,18 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         func loadInnerIps() -> String {
-                guard let filepath = Bundle.main.path(forResource: "bypass2", ofType: "txt") else{
-                        NSLog("------>>>failed to find ip text path")
-                        return ""
-                }
-                guard let contents = try? String(contentsOfFile: filepath) else{
-                        NSLog("------>>>failed to read ip txt")
-                        return ""
-                }
-                //                NSLog("------>>>rule contents:\(contents)")
-                return contents
+                return WalletParam.pInst.ruleCoreData!.ipStr!
         }
         
         func loadMustHitIps() -> String {
-                guard let filepath = Bundle.main.path(forResource: "must_hit", ofType: "txt") else{
-                        NSLog("------>>>failed to find ip text path")
-                        return ""
-                }
-                guard let contents = try? String(contentsOfFile: filepath) else{
-                        NSLog("------>>>failed to read ip txt")
-                        return ""
-                }
-                //                NSLog("------>>>rule contents:\(contents)")
-                return contents
+                return WalletParam.pInst.ruleCoreData!.mustStr!
         }
         
         func aesKeyBase64() -> String {
-
+                
                 return WalletParam.pInst.aesKey
         }
-
+        
         func mtu() -> Int {
                 return (1<<16)
         }
@@ -179,16 +161,7 @@ extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         
         
         func loadRule() -> String {
-                guard let filepath = Bundle.main.path(forResource: "rule", ofType: "txt") else{
-                        NSLog("------>>>failed to find path")
-                        return ""
-                }
-                guard let contents = try? String(contentsOfFile: filepath) else{
-                        NSLog("------>>>failed to read rule txt")
-                        return ""
-                }
-                //                NSLog("------>>>rule contents:\(contents)")
-                return contents
+                return WalletParam.pInst.ruleCoreData!.dnsStr!
         }
         
         func write(toTun p0: Data?, n: UnsafeMutablePointer<Int>?) throws {

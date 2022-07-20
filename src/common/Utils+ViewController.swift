@@ -163,7 +163,7 @@ extension UIViewController {
                                 return
                         }
                         _ = AppSetting.save(password: pwd,
-                                            service: HopConstants.SERVICE_NME_FOR_OSS,
+                                            service: AppConstants.SERVICE_NME_FOR_OSS,
                                             account: Wallet.WInst.SubAddress!)
                         nextAction?()
                 }
