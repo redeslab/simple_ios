@@ -45,7 +45,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                                 }
                                 
                                 var err:NSError? = nil
-                                Tun2SimpleInitEx(self, LogLevel.debug.rawValue, &err)
+                                Tun2SimpleInitEx(self, LogLevel.info.rawValue, &err)
                                 if err != nil{
                                         
                                         completionHandler(err)
@@ -65,7 +65,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 let networkSettings = NEPacketTunnelNetworkSettings.init(tunnelRemoteAddress: proxyServerAddress)
                 networkSettings.mtu = NSNumber.init(value: 1500)
                 
-                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8"])
+                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8","8.8.4.4"])
+//                let dnsSettings = NEDNSOverHTTPSSettings(servers: ["223.5.5.5","223.6.6.6"])
+//                dnsSettings.serverURL = URL.init(string: "https://dns.alidns.com/dns-query")
                 dnsSettings.matchDomains = [""]
                 networkSettings.dnsSettings = dnsSettings
                 
@@ -126,7 +128,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         func loadInnerIps() -> String {
-                return WalletParam.pInst.ruleCoreData!.ipStr!
+                return ""
+//                return WalletParam.pInst.ruleCoreData!.ipStr!
         }
         
         func loadMustHitIps() -> String {
