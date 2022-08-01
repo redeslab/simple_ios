@@ -45,7 +45,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                                 }
                                 
                                 var err:NSError? = nil
-                                Tun2SimpleInitEx(self, LogLevel.info.rawValue, &err)
+                                Tun2SimpleInitEx(self, LogLevel.debug.rawValue, &err)
                                 if err != nil{
                                         
                                         completionHandler(err)
@@ -128,8 +128,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         func loadInnerIps() -> String {
-                return ""
-//                return WalletParam.pInst.ruleCoreData!.ipStr!
+//                return ""
+                return WalletParam.pInst.ruleCoreData!.ipStr!
         }
         
         func loadMustHitIps() -> String {
@@ -137,7 +137,6 @@ extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         }
         
         func aesKeyBase64() -> String {
-                
                 return WalletParam.pInst.aesKey
         }
         
@@ -164,6 +163,7 @@ extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         
         
         func loadRule() -> String {
+//                return ""
                 return WalletParam.pInst.ruleCoreData!.dnsStr!
         }
         
