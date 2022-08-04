@@ -27,7 +27,6 @@ extension NEVPNStatus: CustomStringConvertible {
 
 class HomeVC: UIViewController {
         
-        @IBOutlet weak var minerBGView: UIView!
         @IBOutlet weak var connectButton: UIButton!
         @IBOutlet weak var vpnStatusLabel: UILabel!
         @IBOutlet weak var minersIDLabel: UILabel!

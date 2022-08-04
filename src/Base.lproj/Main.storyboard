@@ -99,10 +99,13 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
+                                        <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.94901960780000005" green="0.52156862749999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.94935196639999997" green="0.52093464140000001" blue="0.32010221480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -184,7 +187,6 @@
                         <outlet property="adScrollView" destination="MnX-Cy-mDD" id="38w-uE-Ux4"/>
                         <outlet property="connectButton" destination="X98-0J-3sd" id="CFG-0U-SGU"/>
                         <outlet property="globalModelSeg" destination="MQW-gS-npj" id="44C-d0-PdC"/>
-                        <outlet property="minerBGView" destination="Yls-aj-mGF" id="mgj-bH-jsc"/>
                         <outlet property="minersIDLabel" destination="PTq-MZ-7BP" id="e6D-hU-hVm"/>
                         <outlet property="minersIPLabel" destination="jQM-qb-t4G" id="RXq-E9-cOm"/>
                         <outlet property="pageControl" destination="23l-Aa-Nn3" id="O4D-x1-hv6"/>
@@ -1553,7 +1555,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2Nw-Iy-5p1"/>
+        <segue reference="gKr-DU-bPn"/>
         <segue reference="qJJ-AI-AJd"/>
     </inferredMetricsTieBreakers>
     <resources>
