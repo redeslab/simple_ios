@@ -17,6 +17,7 @@ public struct ScryptParam {
 
 public struct AppConstants {
         static public let EthScanUrl = "https://etherscan.io/tx/"
+        static public let ConfigUrl = "https://redeslab.github.io"
         
         static public let SALT_LEN = 16
         static public let DBNAME_WALLET = "CDWallet"

@@ -32,7 +32,7 @@ class AppSetting:NSObject{
         
         public static func initSetting(){
                 
-                SimpleInitSystem(AppSetting.AInst)
+                SimpleInitSystem(AppSetting.AInst,true, AppConstants.ConfigUrl)
                 
                 let context = DataShareManager.privateQueueContext()
                 
