@@ -251,6 +251,7 @@ class HomeVC: UIViewController {
                 
                 let providerProtocol = NETunnelProviderProtocol()
                 providerProtocol.serverAddress = "SimpleVpn".locStr
+                providerProtocol.providerBundleIdentifier = "com.hop.simple.ex"
                 targetManager?.protocolConfiguration = providerProtocol
                 
                 targetManager?.saveToPreferences { err in
