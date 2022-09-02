@@ -9,7 +9,7 @@
 import UIKit
 
 class AccountViewController: UIViewController {
-
+        
         @IBOutlet weak var walletView: UIView!
         @IBOutlet weak var appVerLabel: UILabel!
         @IBOutlet weak var shareView: UIView!
@@ -19,7 +19,9 @@ class AccountViewController: UIViewController {
         @IBOutlet weak var showManualView: UIView!
         
         var appVersion: String? {
-            return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+                let ver =  Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "-"
+                let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "-"
+                return "\(ver).\(build)"
         }
         
         override func viewDidLoad() {
@@ -28,12 +30,12 @@ class AccountViewController: UIViewController {
                 walletAddrLabel.text = Wallet.WInst.Address
                 appVerLabel.text = appVersion
                 streamModeSwitch.isOn = AppSetting.isStreamModel
-               
+                
                 
                 let tap = UITapGestureRecognizer(target: self, action: #selector(openTelegram))
                 tap.numberOfTapsRequired = 1
                 telegramView.addGestureRecognizer(tap)
-              
+                
                 
                 let tap4 = UITapGestureRecognizer(target: self, action: #selector(shareApp))
                 tap4.numberOfTapsRequired = 1
@@ -53,7 +55,7 @@ class AccountViewController: UIViewController {
                                                    height: frame.height))
                 walletView.layer.insertSublayer(gradientLayer(frame: newFrame), at: 0)
         }
- 
+        
         
         deinit {
                 NotificationCenter.default.removeObserver(self)
@@ -77,7 +79,7 @@ class AccountViewController: UIViewController {
         
         
         // MARK: - Embedded Actions
-       
+        
         
         @objc func openTelegram() {
                 let screenName = "simplemeta"
@@ -91,14 +93,14 @@ class AccountViewController: UIViewController {
                 }
         }
         
-
+        
         @objc func shareApp() {
                 let items = [URL(string: "https://apps.apple.com/app/id1624442074")!,
                              URL(string: "https://testflight.apple.com/join/KxaTKBJ8")!]
                 let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
                 present(ac, animated: true)
         }
-
+        
         
         @objc func copyAddress() {
                 UIPasteboard.general.string = Wallet.WInst.Address
@@ -108,18 +110,18 @@ class AccountViewController: UIViewController {
         @objc func showUserManual() {
                 self.performSegue(withIdentifier: "ShowManualPages", sender: self)
         }
-
+        
         // MARK: - Button Actions
         
         @IBAction func ChangeStreamMode(_ sender: UISwitch) {
                 AppSetting.changeStreamMode(sender.isOn)
         }
-     
+        
         
         @IBAction func ShowAdressQR(_ sender: UIButton) {
                 self.ShowQRAlertView(data: Wallet.WInst.Address!)
         }
-
+        
         
         // MARK: - Navigation
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
