@@ -66,10 +66,17 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 networkSettings.mtu = NSNumber.init(value: 1500)
                 
 //                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8"])//,"8.8.4.4"
-                let dnsSettings = NEDNSOverHTTPSSettings(servers: ["8.8.8.8","8.8.4.4"])//"223.5.5.5","223.6.6.6"//
-                dnsSettings.serverURL = URL.init(string: "https://dns.google/dns-query")//https://dns.google/dns-query//https://dns.alidns.com/dns-query
-                dnsSettings.matchDomains = [""]
-                networkSettings.dnsSettings = dnsSettings
+                if #available(iOSApplicationExtension 14.0, *) {
+                        let dnsSettings = NEDNSOverHTTPSSettings(servers: ["8.8.8.8","8.8.4.4"])
+                        dnsSettings.serverURL = URL.init(string: "https://dns.google/dns-query")
+                        dnsSettings.matchDomains = [""]
+                        networkSettings.dnsSettings = dnsSettings
+                } else {
+                        let dnsSettings = NEDNSSettings(servers: ["8.8.8.8"])//,"8.8.4.4"
+                        dnsSettings.matchDomains = [""]
+                        networkSettings.dnsSettings = dnsSettings
+                }
+               
                 
                 let ipv4Settings = NEIPv4Settings(addresses: ["10.0.0.8"], subnetMasks: ["255.255.255.0"])
                 ipv4Settings.includedRoutes = [NEIPv4Route.default()]
