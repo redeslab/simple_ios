@@ -126,8 +126,6 @@
 		6940EC8F240A75460029F526 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		6940EC91240A756D0029F526 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		694A099D2401A1CC001F379C /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
-		694FB2732682CF5A0024011A /* CocoaLumberjackSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CocoaLumberjackSwift.xcframework; path = Carthage/Build/CocoaLumberjackSwift.xcframework; sourceTree = "<group>"; };
-		694FB2742682CF5A0024011A /* Resolver.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Resolver.xcframework; path = Carthage/Build/Resolver.xcframework; sourceTree = "<group>"; };
 		695E4C382401778600A13631 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		696A71EB25146725004EA5DE /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		696A71ED251467DA004EA5DE /* QRCodeShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeShowViewController.swift; sourceTree = "<group>"; };
@@ -154,16 +152,9 @@
 		69980C5C23F7B3CD00829B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69980C5D23F7B3CD00829B09 /* extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = extension.entitlements; sourceTree = "<group>"; };
 		699BB8732681CA6000524FC6 /* CryptoSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CryptoSwift.xcframework; path = Carthage/Build/CryptoSwift.xcframework; sourceTree = "<group>"; };
-		699BB8752681CA6000524FC6 /* CocoaAsyncSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CocoaAsyncSocket.xcframework; path = Carthage/Build/CocoaAsyncSocket.xcframework; sourceTree = "<group>"; };
 		699BB87C2681CA7D00524FC6 /* MBProgressHUD.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MBProgressHUD.xcframework; path = Carthage/Build/MBProgressHUD.xcframework; sourceTree = "<group>"; };
 		699BB88C2681CA9E00524FC6 /* SwiftSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftSocket.xcframework; path = Carthage/Build/SwiftSocket.xcframework; sourceTree = "<group>"; };
 		699BB88F2681CAA100524FC6 /* SwiftyJSON.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyJSON.xcframework; path = Carthage/Build/SwiftyJSON.xcframework; sourceTree = "<group>"; };
-		699BB8952681CDB000524FC6 /* NEKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NEKit.xcframework; path = Carthage/Build/NEKit.xcframework; sourceTree = "<group>"; };
-		699BB89E2681CDEB00524FC6 /* Yaml.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Yaml.xcframework; path = Carthage/Build/Yaml.xcframework; sourceTree = "<group>"; };
-		699BB89F2681CDEB00524FC6 /* tun2socks.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = tun2socks.xcframework; path = Carthage/Build/tun2socks.xcframework; sourceTree = "<group>"; };
-		699BB8B72681CE1D00524FC6 /* CocoaLumberjack.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CocoaLumberjack.xcframework; path = Carthage/Build/CocoaLumberjack.xcframework; sourceTree = "<group>"; };
-		699BB8B82681CE1D00524FC6 /* lwip.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = lwip.xcframework; path = Carthage/Build/lwip.xcframework; sourceTree = "<group>"; };
-		699BB8B92681CE1D00524FC6 /* MMDB.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MMDB.xcframework; path = Carthage/Build/MMDB.xcframework; sourceTree = "<group>"; };
 		699D97AC287BF5AD00AA2A4C /* must_hit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = must_hit.txt; sourceTree = "<group>"; };
 		69A47D69240EB1DD00C86CFF /* WalletParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletParam.swift; sourceTree = "<group>"; };
 		69A47D6E240EB8C100C86CFF /* HopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopMessage.swift; sourceTree = "<group>"; };
@@ -213,18 +204,9 @@
 			children = (
 				2B87493128714CDB008FF69B /* tun2Simple.xcframework */,
 				2B866E9728431F240038AC12 /* simple.xcframework */,
-				694FB2732682CF5A0024011A /* CocoaLumberjackSwift.xcframework */,
-				694FB2742682CF5A0024011A /* Resolver.xcframework */,
-				699BB8B72681CE1D00524FC6 /* CocoaLumberjack.xcframework */,
-				699BB8B82681CE1D00524FC6 /* lwip.xcframework */,
-				699BB8B92681CE1D00524FC6 /* MMDB.xcframework */,
-				699BB89F2681CDEB00524FC6 /* tun2socks.xcframework */,
-				699BB89E2681CDEB00524FC6 /* Yaml.xcframework */,
-				699BB8952681CDB000524FC6 /* NEKit.xcframework */,
 				699BB88F2681CAA100524FC6 /* SwiftyJSON.xcframework */,
 				699BB88C2681CA9E00524FC6 /* SwiftSocket.xcframework */,
 				699BB87C2681CA7D00524FC6 /* MBProgressHUD.xcframework */,
-				699BB8752681CA6000524FC6 /* CocoaAsyncSocket.xcframework */,
 				699BB8732681CA6000524FC6 /* CryptoSwift.xcframework */,
 				6940EC91240A756D0029F526 /* AVFoundation.framework */,
 				6940EC8D240A6BA00029F526 /* Photos.framework */,
