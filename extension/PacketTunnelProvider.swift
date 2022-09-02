@@ -65,9 +65,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 let networkSettings = NEPacketTunnelNetworkSettings.init(tunnelRemoteAddress: proxyServerAddress)
                 networkSettings.mtu = NSNumber.init(value: 1500)
                 
-                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8"])//,"8.8.4.4"
-//                let dnsSettings = NEDNSOverHTTPSSettings(servers: ["223.5.5.5","223.6.6.6"])
-//                dnsSettings.serverURL = URL.init(string: "https://dns.alidns.com/dns-query")
+//                let dnsSettings = NEDNSSettings(servers: ["8.8.8.8"])//,"8.8.4.4"
+                let dnsSettings = NEDNSOverHTTPSSettings(servers: ["8.8.8.8","8.8.4.4"])//"223.5.5.5","223.6.6.6"//
+                dnsSettings.serverURL = URL.init(string: "https://dns.google/dns-query")//https://dns.google/dns-query//https://dns.alidns.com/dns-query
                 dnsSettings.matchDomains = [""]
                 networkSettings.dnsSettings = dnsSettings
                 

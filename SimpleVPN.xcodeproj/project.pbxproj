@@ -167,6 +167,7 @@
 		699D97AC287BF5AD00AA2A4C /* must_hit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = must_hit.txt; sourceTree = "<group>"; };
 		69A47D69240EB1DD00C86CFF /* WalletParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletParam.swift; sourceTree = "<group>"; };
 		69A47D6E240EB8C100C86CFF /* HopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopMessage.swift; sourceTree = "<group>"; };
+		69B5997628C1B68D006F5AE6 /* SimpleVPNRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleVPNRelease.entitlements; sourceTree = "<group>"; };
 		69C112D32515DC7C00C5E9F5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		69D1DFA9240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 		69980C1C23F78D3E00829B09 = {
 			isa = PBXGroup;
 			children = (
+				69B5997628C1B68D006F5AE6 /* SimpleVPNRelease.entitlements */,
 				6932A18124067F7400D2DA39 /* shared */,
 				69FA41B924061573005CF3FA /* Cartfile */,
 				69980C2723F78D3E00829B09 /* src */,
@@ -738,7 +740,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = src/simpleVPN.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SimpleVPNRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 4;
