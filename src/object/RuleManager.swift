@@ -45,7 +45,7 @@ class RuleManager:NSObject{
                         let jsonVer = JSON(verJson)
                         let dns_ver = jsonVer["dns"].int32 ?? -1
                         let ip_ver = jsonVer["by_pass"].int32 ?? -1
-                        let must_ver = jsonVer["dns"].int32 ?? -1
+                        let must_ver = jsonVer["must_hit"].int32 ?? -1
                         var needSave = false
                         if dns_ver > rVer!.dnsVer{
                                 let dnsStr = SimpleRuleDataLoad(&err)

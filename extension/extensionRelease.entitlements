@@ -9,6 +9,10 @@
 		<string>dns-settings</string>
 		<string>packet-tunnel-provider</string>
 	</array>
+	<key>com.apple.developer.applesignin</key>
+	<array>
+		<string></string>
+	</array>
 	<key>com.apple.developer.networking.vpn.api</key>
 	<array>
 		<string>allow-vpn</string>
@@ -17,5 +21,7 @@
 	<array>
 		<string>group.com.hop.simple</string>
 	</array>
+	<key>com.apple.developer.kernel.increased-memory-limit</key>
+	<true/>
 </dict>
 </plist>
