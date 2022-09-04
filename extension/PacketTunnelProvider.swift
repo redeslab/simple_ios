@@ -134,8 +134,11 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
 
 extension PacketTunnelProvider:Tun2SimpleExtensionIProtocol{
         func loadInnerIps() -> String {
-//                return ""
-                return WalletParam.pInst.ruleCoreData!.ipStr!
+                if #available(iOSApplicationExtension 15.0, *) {
+                        return WalletParam.pInst.ruleCoreData!.ipStr!
+                }else{
+                        return ""
+                }
         }
         
         func loadMustHitIps() -> String {
