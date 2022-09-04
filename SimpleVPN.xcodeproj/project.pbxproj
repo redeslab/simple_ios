@@ -54,6 +54,7 @@
 		69A47D6A240EB1DD00C86CFF /* WalletParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A47D69240EB1DD00C86CFF /* WalletParam.swift */; };
 		69A47D6F240EB8C100C86CFF /* HopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A47D6E240EB8C100C86CFF /* HopMessage.swift */; };
 		69A47D70240EB8C100C86CFF /* HopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A47D6E240EB8C100C86CFF /* HopMessage.swift */; };
+		69B5997828C23E7B006F5AE6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691CCF9F23F8240D007768DF /* NetworkExtension.framework */; };
 		69C112D42515DC7C00C5E9F5 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C112D32515DC7C00C5E9F5 /* Wallet.swift */; };
 		69D1DFAA240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1DFA9240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift */; };
 		69F65FEE2871839A00BC7FAE /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */; };
@@ -159,6 +160,7 @@
 		69A47D69240EB1DD00C86CFF /* WalletParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletParam.swift; sourceTree = "<group>"; };
 		69A47D6E240EB8C100C86CFF /* HopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopMessage.swift; sourceTree = "<group>"; };
 		69B5997628C1B68D006F5AE6 /* SimpleVPNRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleVPNRelease.entitlements; sourceTree = "<group>"; };
+		69B5997728C23E7A006F5AE6 /* extensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = extensionRelease.entitlements; sourceTree = "<group>"; };
 		69C112D32515DC7C00C5E9F5 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		69D1DFA9240D7E8300D3BA30 /* MinerDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		69F65FEC2871839A00BC7FAE /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B87493228714CDB008FF69B /* tun2Simple.xcframework in Frameworks */,
+				69B5997828C23E7B006F5AE6 /* NetworkExtension.framework in Frameworks */,
 				694FB26F2682CF590024011A /* SwiftyJSON.xcframework in Frameworks */,
 				2BFF8D2C2830F65C00D4414A /* CryptoSwift.xcframework in Frameworks */,
 			);
@@ -296,6 +299,7 @@
 		69980C5923F7B3CD00829B09 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				69B5997728C23E7A006F5AE6 /* extensionRelease.entitlements */,
 				69980C5A23F7B3CD00829B09 /* PacketTunnelProvider.swift */,
 				69980C5C23F7B3CD00829B09 /* Info.plist */,
 				69980C5D23F7B3CD00829B09 /* extension.entitlements */,
@@ -783,7 +787,7 @@
 		69980C6323F7B3CD00829B09 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = extension/extensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 8;

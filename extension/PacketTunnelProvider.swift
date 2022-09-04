@@ -47,7 +47,6 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                                 var err:NSError? = nil
                                 Tun2SimpleInitEx(self, LogLevel.info.rawValue, &err)
                                 if err != nil{
-                                        
                                         completionHandler(err)
                                         return
                                 }
