@@ -216,53 +216,98 @@ class HomeVC: UIViewController {
         }
         
         // MARK: - VPN Manager
+        private func makeManager() -> NETunnelProviderManager {
+                
+                let manager = NETunnelProviderManager()
+                
+                manager.localizedDescription = "The Big Dipper".locStr
+                
+                let proto = NETunnelProviderProtocol()
+                proto.serverAddress = "distribute server".locStr
+                proto.providerBundleIdentifier = "com.star.theBigDipper.vpn"
+                proto.disconnectOnSleep = false
+                //                proto.serverAddress = "127.0.0.1:4009"
+                proto.providerConfiguration = [:]
+                
+                manager.protocolConfiguration = proto
+                
+                // Enable the manager by default
+                manager.isEnabled = true
+                
+                return manager
+        }
+        
         func reloadManagers() {
                 
-                NETunnelProviderManager.loadAllFromPreferences() { newManagers, error in
-                        if let err = error {
-                                NSLog(err.localizedDescription)
+                Task { do {
+                        
+                        let vpnManagers = try await NETunnelProviderManager.loadAllFromPreferences()
+                        if vpnManagers.count == 0{
+                                self.targetManager = self.makeManager()
+                                try await self.targetManager!.saveToPreferences()
+                                try await self.targetManager!.loadFromPreferences()
                                 return
                         }
-                        
-                        guard let vpnManagers = newManagers else { return }
-                        
-                        NSLog("=======>vpnManager=\(vpnManagers.count)")
-                        if vpnManagers.count > 0{
-                                self.targetManager = vpnManagers[0]
-                                self.getModelFromVPN()
-                        }else{
-                                self.targetManager = NETunnelProviderManager()
+                        self.targetManager = vpnManagers[0]
+                        if self.targetManager!.isEnabled == false{
+                                self.targetManager!.isEnabled = true
+                                try await self.targetManager!.saveToPreferences() 
                         }
-                        
-                        self.targetManager?.loadFromPreferences(completionHandler: { err in
-                                if let err = error {
-                                        NSLog(err.localizedDescription)
-                                        return
-                                }
-                                self.setupVPN()
-                        })
-                }
+                        try await self.targetManager!.loadFromPreferences()
+                }catch let err{
+                        self.ShowTips(msg: err.localizedDescription)
+                } }
+                
         }
+
         
-        func setupVPN(){
-                
-                targetManager?.localizedDescription = "SimpleVpn".locStr
-                targetManager?.isEnabled = true
-                
-                let providerProtocol = NETunnelProviderProtocol()
-                providerProtocol.serverAddress = "SimpleVpn".locStr
-                providerProtocol.providerBundleIdentifier = "com.hop.simple.ex"
-                targetManager?.protocolConfiguration = providerProtocol
-                
-                targetManager?.saveToPreferences { err in
-                        if let saveErr = err{
-                                NSLog("save preference err:\(saveErr.localizedDescription)")
-                                return
-                        }
-                        self.VPNStatusDidChange(nil)
-                }
-        }
-        
+//        func reloadManagers() {
+//
+//                NETunnelProviderManager.loadAllFromPreferences() { newManagers, error in
+//                        if let err = error {
+//                                NSLog(err.localizedDescription)
+//                                return
+//                        }
+//
+//                        guard let vpnManagers = newManagers else { return }
+//
+//                        NSLog("=======>vpnManager=\(vpnManagers.count)")
+//                        if vpnManagers.count > 0{
+//                                self.targetManager = vpnManagers[0]
+//                                self.getModelFromVPN()
+//                        }else{
+//                                self.targetManager = NETunnelProviderManager()
+//                        }
+//
+//                        self.targetManager?.loadFromPreferences(completionHandler: { err in
+//                                if let err = error {
+//                                        NSLog(err.localizedDescription)
+//                                        return
+//                                }
+//                                self.setupVPN()
+//                        })
+//                }
+//        }
+//
+//        func setupVPN(){
+//
+//                targetManager?.localizedDescription = "SimpleVpn".locStr
+//                targetManager?.isEnabled = true
+//
+//                let providerProtocol = NETunnelProviderProtocol()
+//                providerProtocol.serverAddress = "SimpleVpn".locStr
+//                providerProtocol.providerBundleIdentifier = "com.hop.simple.ex"
+//                targetManager?.protocolConfiguration = providerProtocol
+//
+//                targetManager?.saveToPreferences { err in
+//                        if let saveErr = err{
+//                                NSLog("save preference err:\(saveErr.localizedDescription)")
+//                                return
+//                        }
+//                        self.VPNStatusDidChange(nil)
+//                }
+//        }
+//
         private func getModelFromVPN(){
                 guard let session = self.targetManager?.connection as? NETunnelProviderSession,
                       session.status != .invalid else{

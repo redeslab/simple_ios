@@ -42,7 +42,7 @@
 		69980C3423F78D3F00829B09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69980C3323F78D3F00829B09 /* Assets.xcassets */; };
 		69980C3723F78D3F00829B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69980C3523F78D3F00829B09 /* LaunchScreen.storyboard */; };
 		69980C5B23F7B3CD00829B09 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69980C5A23F7B3CD00829B09 /* PacketTunnelProvider.swift */; };
-		69980C6023F7B3CD00829B09 /* extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 69980C5823F7B3CD00829B09 /* extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		69980C6023F7B3CD00829B09 /* extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 69980C5823F7B3CD00829B09 /* extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		699BB8CF2681E22100524FC6 /* MBProgressHUD.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BB87C2681CA7D00524FC6 /* MBProgressHUD.xcframework */; };
 		699BB8D02681E22100524FC6 /* MBProgressHUD.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 699BB87C2681CA7D00524FC6 /* MBProgressHUD.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		699BB8D12681E22300524FC6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691CCF9F23F8240D007768DF /* NetworkExtension.framework */; };
@@ -83,15 +83,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		69980C5323F7946C00829B09 /* Embed App Extensions */ = {
+		69980C5323F7946C00829B09 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				69980C6023F7B3CD00829B09 /* extension.appex in Embed App Extensions */,
+				69980C6023F7B3CD00829B09 /* extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		699BB8C42681E21200524FC6 /* Embed Frameworks */ = {
@@ -348,7 +348,7 @@
 				69980C2123F78D3E00829B09 /* Sources */,
 				69980C2223F78D3E00829B09 /* Frameworks */,
 				69980C2323F78D3E00829B09 /* Resources */,
-				69980C5323F7946C00829B09 /* Embed App Extensions */,
+				69980C5323F7946C00829B09 /* Embed Foundation Extensions */,
 				699BB8C42681E21200524FC6 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -386,7 +386,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = hyperorchid;
 				TargetAttributes = {
 					69980C2423F78D3E00829B09 = {
@@ -698,7 +698,7 @@
 				CODE_SIGN_ENTITLEMENTS = src/simpleVPN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -712,7 +712,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple;
 				PRODUCT_NAME = SimpleVPN;
 				PROVISIONING_PROFILE_SPECIFIER = dev_simple_v1;
@@ -729,7 +729,7 @@
 				CODE_SIGN_ENTITLEMENTS = SimpleVPNRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -743,7 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple;
 				PRODUCT_NAME = SimpleVPN;
 				PROVISIONING_PROFILE_SPECIFIER = release_simple;
@@ -758,7 +758,7 @@
 				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -772,7 +772,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OS_ACTIVITY_MODE = default;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple.ex;
@@ -790,7 +790,7 @@
 				CODE_SIGN_ENTITLEMENTS = extension/extensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -804,7 +804,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OS_ACTIVITY_MODE = default;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hop.simple.ex;
