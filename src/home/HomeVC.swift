@@ -32,8 +32,7 @@ class HomeVC: UIViewController {
         @IBOutlet weak var minersIDLabel: UILabel!
         @IBOutlet weak var minersIPLabel: UILabel!
         @IBOutlet weak var globalModelSeg: UISegmentedControl!
-        @IBOutlet weak var adScrollView: UIScrollView!
-        @IBOutlet weak var pageControl: UIPageControl!
+        @IBOutlet var nodeBackgroundView: UIView!
         
         var vpnStatusOn:Bool = false
         var targetManager:NETunnelProviderManager? = nil
@@ -58,10 +57,10 @@ class HomeVC: UIViewController {
                 
                 NotificationCenter.default.addObserver(self, selector: #selector(minerChanged(_:)),
                                                        name: AppConstants.NOTI_MINER_INUSE_CHANGED.name, object: nil)
+                nodeBackgroundView.layer.borderColor =  UIColor(hex: "#FF782BFF")?.cgColor//UIColor.red.cgColor//
         }
         override func viewDidAppear(_ animated: Bool) {
                 super.viewDidAppear(animated)
-                setupAdScrollView()
         }
         override func viewDidDisappear(_ animated: Bool) {
                 super.viewDidDisappear(animated)
@@ -259,54 +258,6 @@ class HomeVC: UIViewController {
                 
         }
 
-        
-//        func reloadManagers() {
-//
-//                NETunnelProviderManager.loadAllFromPreferences() { newManagers, error in
-//                        if let err = error {
-//                                NSLog(err.localizedDescription)
-//                                return
-//                        }
-//
-//                        guard let vpnManagers = newManagers else { return }
-//
-//                        NSLog("=======>vpnManager=\(vpnManagers.count)")
-//                        if vpnManagers.count > 0{
-//                                self.targetManager = vpnManagers[0]
-//                                self.getModelFromVPN()
-//                        }else{
-//                                self.targetManager = NETunnelProviderManager()
-//                        }
-//
-//                        self.targetManager?.loadFromPreferences(completionHandler: { err in
-//                                if let err = error {
-//                                        NSLog(err.localizedDescription)
-//                                        return
-//                                }
-//                                self.setupVPN()
-//                        })
-//                }
-//        }
-//
-//        func setupVPN(){
-//
-//                targetManager?.localizedDescription = "SimpleVpn".locStr
-//                targetManager?.isEnabled = true
-//
-//                let providerProtocol = NETunnelProviderProtocol()
-//                providerProtocol.serverAddress = "SimpleVpn".locStr
-//                providerProtocol.providerBundleIdentifier = "com.hop.simple.ex"
-//                targetManager?.protocolConfiguration = providerProtocol
-//
-//                targetManager?.saveToPreferences { err in
-//                        if let saveErr = err{
-//                                NSLog("save preference err:\(saveErr.localizedDescription)")
-//                                return
-//                        }
-//                        self.VPNStatusDidChange(nil)
-//                }
-//        }
-//
         private func getModelFromVPN(){
                 guard let session = self.targetManager?.connection as? NETunnelProviderSession,
                       session.status != .invalid else{
@@ -381,49 +332,4 @@ class HomeVC: UIViewController {
                         self.minersIPLabel.text = m_data.host
                 }
         }}
-        
-        private func setupAdScrollView(){
-                self.adViews = AdvertiseView.initAdViews()
-                let size = adViews.count
-                if size == 0{
-                        return
-                }
-                advertiseLinkSize = size
-                let onePageSize = adScrollView.frame.size
-                adScrollView.contentSize = CGSize(width: CGFloat(size) * onePageSize.width,
-                                                  height: onePageSize.height)
-                adScrollView.isPagingEnabled = true
-                
-                for i in 0 ..< size{
-                        self.adViews[i].frame = CGRect(x:onePageSize.width * CGFloat(i),
-                                                       y:0,
-                                                       width: onePageSize.width,
-                                                       height: onePageSize.height)
-                        adScrollView.addSubview(self.adViews[i])
-                }
-                
-                pageControl.numberOfPages = size
-                pageControl.currentPage = 0
-                adScrollView.delegate = self
-                
-                timer = Timer.scheduledTimer(timeInterval: 5.0,
-                                             target: self,
-                                             selector: #selector(adScrollTimer),
-                                             userInfo: nil,
-                                             repeats: true)
-        }
-}
-
-extension HomeVC:UIScrollViewDelegate{
-        
-        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-                let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-                pageControl.currentPage = Int(pageNumber)
-        }
-        
-        @objc func adScrollTimer() {
-                pageControl.currentPage = (pageControl.currentPage + 1) % advertiseLinkSize
-                let x = adScrollView.frame.size.width * CGFloat(pageControl.currentPage)
-                adScrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
-        }
 }

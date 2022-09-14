@@ -30,6 +30,5 @@ class RoundedCornerView: UIView {
             layer.borderColor = borderColor?.cgColor
         }
     }
-        
 }
 
