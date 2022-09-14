@@ -251,7 +251,6 @@ class HomeVC: UIViewController {
                         self.targetManager = vpnManagers[0]
                         if self.targetManager!.isEnabled == false{
                                 self.targetManager!.isEnabled = true
-                                try await self.targetManager!.saveToPreferences() 
                         }
                         try await self.targetManager!.loadFromPreferences()
                 }catch let err{
