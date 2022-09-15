@@ -219,11 +219,11 @@ class HomeVC: UIViewController {
                 
                 let manager = NETunnelProviderManager()
                 
-                manager.localizedDescription = "The Big Dipper".locStr
+                manager.localizedDescription = "The Big Dipper lite".locStr
                 
                 let proto = NETunnelProviderProtocol()
                 proto.serverAddress = "distribute server".locStr
-                proto.providerBundleIdentifier = "com.star.theBigDipper.vpn"
+                proto.providerBundleIdentifier = "com.hop.simplenet.beta.extension"
                 proto.disconnectOnSleep = false
                 //                proto.serverAddress = "127.0.0.1:4009"
                 proto.providerConfiguration = [:]
