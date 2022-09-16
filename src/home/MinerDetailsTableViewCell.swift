@@ -26,7 +26,7 @@ class MinerDetailsTableViewCell: UITableViewCell {
 
         func initWith(minerData:inout CDMiner, isChecked:Bool, index:Int) {
                
-                self.IP.text = minerData.host ?? "0.0.0.0"
+                self.IP.text = minerData.name ?? "<->"// minerData.host ?? "0.0.0.0"
                 self.Ping.text = String(format: "%.2f "+"ms".locStr, minerData.ping )
                 self.Address.text = minerData.addr
                 checkIcon.isHidden = !isChecked

@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
         @IBOutlet weak var connectButton: UIButton!
         @IBOutlet weak var vpnStatusLabel: UILabel!
         @IBOutlet weak var minersIDLabel: UILabel!
-        @IBOutlet weak var minersIPLabel: UILabel!
+        @IBOutlet weak var minersNameLabel: UILabel!
         @IBOutlet weak var globalModelSeg: UISegmentedControl!
         @IBOutlet var nodeBackgroundView: UIView!
         
@@ -92,6 +92,16 @@ class HomeVC: UIViewController {
                 
                 guard conn.status == .disconnected || conn.status == .invalid else {
                         conn.stopVPNTunnel()
+                        return
+                }
+                
+                if self.targetManager?.isEnabled == false{
+                        self.targetManager!.isEnabled = true
+                        Task{
+                                try await self.targetManager!.saveToPreferences()
+                                try await self.targetManager!.loadFromPreferences()
+                                startOrStop(sender)
+                        }
                         return
                 }
                 
@@ -225,12 +235,10 @@ class HomeVC: UIViewController {
                 proto.serverAddress = "simple lite server".locStr
                 proto.providerBundleIdentifier = "com.hop.simplenet.beta.extension"
                 proto.disconnectOnSleep = false
-                //                proto.serverAddress = "127.0.0.1:4009"
                 proto.providerConfiguration = [:]
                 
                 manager.protocolConfiguration = proto
                 
-                // Enable the manager by default
                 manager.isEnabled = true
                 
                 return manager
@@ -312,11 +320,11 @@ class HomeVC: UIViewController {
                         if let minerAddr = AppSetting.coreData?.minerAddrInUsed, minerAddr != ""{
                                 self.minersIDLabel.text = minerAddr
                                 if let m_data = Miner.CachedMiner[minerAddr.lowercased()]{
-                                        self.minersIPLabel.text = m_data.host
+                                        self.minersNameLabel.text = m_data.name
                                 }
                         }else{
                                 self.minersIDLabel.text = "Choose one miner please".locStr
-                                self.minersIPLabel.text = "NAN".locStr
+                                self.minersNameLabel.text = "NAN".locStr
                         }
                 }
         }
@@ -325,11 +333,11 @@ class HomeVC: UIViewController {
         @objc func setMinerDetails(_ notification: Notification?){DispatchQueue.main.async {
                 guard let minerAddr = AppSetting.coreData?.minerAddrInUsed, minerAddr != "" else{
                         self.minersIDLabel.text = "Choose one miner please".locStr
-                        self.minersIPLabel.text = "NAN".locStr
+                        self.minersNameLabel.text = "NAN".locStr
                         return
                 }
                 if let m_data = Miner.CachedMiner[minerAddr.lowercased()]{
-                        self.minersIPLabel.text = m_data.host
+                        self.minersNameLabel.text = m_data.name
                 }
         }}
 }

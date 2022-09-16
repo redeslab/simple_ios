@@ -63,16 +63,18 @@ class Miner : NSObject {
                         guard let minerAddr = subJson["Addr"].string, let host = subJson["Host"].string else{
                                 continue
                         }
+                        let name = subJson["Name"].string ?? ""
                         guard let dbItem = dataInDB[minerAddr] else{
-                                let cData = CDMiner.newMiner(addr: minerAddr, host: host)
+                                let cData = CDMiner.newMiner(addr: minerAddr, host: host, name:name)
                                 CachedMiner[minerAddr.lowercased()] = cData
-                                print("------>>>new server item", cData.addr!, cData.host!)
+                                print("------>>>new server item", cData.addr!, cData.host!, cData.name ?? "<->")
                                 continue
                         }
                         dbItem.host = host
+                        dbItem.name = name
                         CachedMiner[minerAddr.lowercased()] = dbItem
                         dataInDB.removeValue(forKey: minerAddr)
-                        print("------>>>update server item", dbItem.addr!, dbItem.host!)
+                        print("------>>>update server item", dbItem.addr!, dbItem.host!, dbItem.name!)
                 }
                 
                 for (_, obj) in dataInDB{
@@ -100,13 +102,14 @@ class Miner : NSObject {
 }
 
 extension CDMiner{
-        public static func newMiner(addr:String, host:String) -> CDMiner {
+        public static func newMiner(addr:String, host:String, name:String) -> CDMiner {
                 
                 let dbContext = DataShareManager.privateQueueContext()
                 let data = CDMiner(context: dbContext)
                 data.ping = -1
                 data.host = host
                 data.addr = addr
+                data.name = name
                 return data
         }
 }
