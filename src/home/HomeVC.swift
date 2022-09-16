@@ -222,7 +222,7 @@ class HomeVC: UIViewController {
                 manager.localizedDescription = "The Big Dipper lite".locStr
                 
                 let proto = NETunnelProviderProtocol()
-                proto.serverAddress = "distribute server".locStr
+                proto.serverAddress = "simple lite server".locStr
                 proto.providerBundleIdentifier = "com.hop.simplenet.beta.extension"
                 proto.disconnectOnSleep = false
                 //                proto.serverAddress = "127.0.0.1:4009"

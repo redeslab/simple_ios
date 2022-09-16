@@ -22,7 +22,7 @@
 		693E92D624A89A9D00149A75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 693E92D824A89A9D00149A75 /* InfoPlist.strings */; };
 		6940EC90240A75460029F526 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6940EC8F240A75460029F526 /* ScannerViewController.swift */; };
 		694FB26F2682CF590024011A /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699BB88F2681CAA100524FC6 /* SwiftyJSON.xcframework */; };
-		695E4C392401778600A13631 /* SVN.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 695E4C372401778600A13631 /* SVN.xcdatamodeld */; };
+		695E4C392401778600A13631 /* SVN_LITE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 695E4C372401778600A13631 /* SVN_LITE.xcdatamodeld */; };
 		696A71EC25146725004EA5DE /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696A71EB25146725004EA5DE /* PasswordViewController.swift */; };
 		696A71EE251467DA004EA5DE /* QRCodeShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696A71ED251467DA004EA5DE /* QRCodeShowViewController.swift */; };
 		696A71F02514680A004EA5DE /* Utils+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696A71EF2514680A004EA5DE /* Utils+ViewController.swift */; };
@@ -65,7 +65,7 @@
 		69FA41932404DBCD005CF3FA /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41912404DBCD005CF3FA /* AppConstants.swift */; };
 		69FA419624050059005CF3FA /* AppErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA419524050059005CF3FA /* AppErr.swift */; };
 		69FA419724050059005CF3FA /* AppErr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA419524050059005CF3FA /* AppErr.swift */; };
-		69FA41D3240667E1005CF3FA /* SVN.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 695E4C372401778600A13631 /* SVN.xcdatamodeld */; };
+		69FA41D3240667E1005CF3FA /* SVN_LITE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 695E4C372401778600A13631 /* SVN_LITE.xcdatamodeld */; };
 		7C1E58AE25417EDD0032F005 /* gfw.plist in Resources */ = {isa = PBXBuildFile; fileRef = 698A513E23FD08B900836E26 /* gfw.plist */; };
 		7C3D0524252AA5B800B59255 /* Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D0523252AA5B800B59255 /* Miner.swift */; };
 		7C9D51832532F0710083E2F5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA41912404DBCD005CF3FA /* AppConstants.swift */; };
@@ -224,7 +224,7 @@
 			children = (
 				69FA41912404DBCD005CF3FA /* AppConstants.swift */,
 				69FA419524050059005CF3FA /* AppErr.swift */,
-				695E4C372401778600A13631 /* SVN.xcdatamodeld */,
+				695E4C372401778600A13631 /* SVN_LITE.xcdatamodeld */,
 				69FA41892404B348005CF3FA /* DataShareManager.swift */,
 				69A47D6E240EB8C100C86CFF /* HopMessage.swift */,
 			);
@@ -464,7 +464,7 @@
 				69FA419624050059005CF3FA /* AppErr.swift in Sources */,
 				696A71EC25146725004EA5DE /* PasswordViewController.swift in Sources */,
 				696A71F02514680A004EA5DE /* Utils+ViewController.swift in Sources */,
-				695E4C392401778600A13631 /* SVN.xcdatamodeld in Sources */,
+				695E4C392401778600A13631 /* SVN_LITE.xcdatamodeld in Sources */,
 				2B865BCA2835044700B57529 /* AdvertiseView.swift in Sources */,
 				698A514323FD58DC00836E26 /* Utils.swift in Sources */,
 				69980C2923F78D3E00829B09 /* AppDelegate.swift in Sources */,
@@ -485,7 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69FA41D3240667E1005CF3FA /* SVN.xcdatamodeld in Sources */,
+				69FA41D3240667E1005CF3FA /* SVN_LITE.xcdatamodeld in Sources */,
 				696A71F425146CFB004EA5DE /* Utils.swift in Sources */,
 				69FA419724050059005CF3FA /* AppErr.swift in Sources */,
 				69FA41932404DBCD005CF3FA /* AppConstants.swift in Sources */,
@@ -677,7 +677,7 @@
 				CODE_SIGN_ENTITLEMENTS = src/simpleVPN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
@@ -710,7 +710,7 @@
 				CODE_SIGN_ENTITLEMENTS = SimpleVPNRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
@@ -741,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
@@ -775,7 +775,7 @@
 				CODE_SIGN_ENTITLEMENTS = extension/extensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
@@ -836,13 +836,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		695E4C372401778600A13631 /* SVN.xcdatamodeld */ = {
+		695E4C372401778600A13631 /* SVN_LITE.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				695E4C382401778600A13631 /* Model.xcdatamodel */,
 			);
 			currentVersion = 695E4C382401778600A13631 /* Model.xcdatamodel */;
-			path = SVN.xcdatamodeld;
+			path = SVN_LITE.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

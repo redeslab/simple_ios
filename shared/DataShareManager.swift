@@ -34,7 +34,7 @@ class DataShareManager: NSObject {
         }()
         
         lazy var managedObjectModel: NSManagedObjectModel = {
-                let modelURL = Bundle.main.url(forResource: "SVN", withExtension: "momd")!
+                let modelURL = Bundle.main.url(forResource: "SVN_LITE", withExtension: "momd")!
                 return NSManagedObjectModel(contentsOf: modelURL)!
         }()
         
