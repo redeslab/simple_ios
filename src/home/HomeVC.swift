@@ -229,7 +229,7 @@ class HomeVC: UIViewController {
                 
                 let manager = NETunnelProviderManager()
                 
-                manager.localizedDescription = "The Big Dipper lite".locStr
+                manager.localizedDescription = "The Simple VPN lite".locStr
                 
                 let proto = NETunnelProviderProtocol()
                 proto.serverAddress = "simple lite server".locStr
