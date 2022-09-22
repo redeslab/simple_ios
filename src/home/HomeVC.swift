@@ -258,32 +258,13 @@ class HomeVC: UIViewController {
                         self.targetManager = vpnManagers[0]
                         if self.targetManager!.isEnabled == false{
                                 self.targetManager!.isEnabled = true
+                                try await self.targetManager!.saveToPreferences()
                         }
                         try await self.targetManager!.loadFromPreferences()
                 }catch let err{
                         self.ShowTips(msg: err.localizedDescription)
                 } }
                 
-        }
-
-        private func getModelFromVPN(){
-                guard let session = self.targetManager?.connection as? NETunnelProviderSession,
-                      session.status != .invalid else{
-                        NSLog("=======>Can't not load global model")
-                        return
-                }
-                guard let message = try? JSON(["GetModel": true]).rawData() else{
-                        return
-                }
-                try? session.sendProviderMessage(message){reponse in
-                        guard let rs = reponse else{
-                                return
-                        }
-                        let param = JSON(rs)
-                        AppSetting.isGlobalModel = param["Global"].bool ?? false
-                        self.setModelStatus(sender: self.globalModelSeg, oldStatus: AppSetting.isGlobalModel)
-                        NSLog("=======>Curretn global model is [\(AppSetting.isGlobalModel)]")
-                }
         }
         
         private func notifyModelToVPN(sender: UISegmentedControl, oldStatus:Bool){
