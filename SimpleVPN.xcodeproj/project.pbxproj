@@ -741,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = extension/extension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;
@@ -775,7 +775,7 @@
 				CODE_SIGN_ENTITLEMENTS = extension/extensionRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 6A53CAFMZ9;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6A53CAFMZ9;
 				ENABLE_BITCODE = NO;

@@ -125,7 +125,9 @@ extension MinerChooseViewController:UITableViewDelegate, UITableViewDataSource{
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "MinerItemToChoose", for: indexPath)
-                
+                guard  self.minerArray.count > indexPath.row else{
+                        return cell
+                }
                 if let c = cell as? MinerDetailsTableViewCell{
                         var m_data = self.minerArray[indexPath.row]
                         let checked = curMiner?.lowercased() == m_data.addr!.lowercased()
