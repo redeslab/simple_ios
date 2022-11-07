@@ -42,7 +42,7 @@ class Miner : NSObject {
         
         
         public static func SyncMinerListFromBlockChain(){
-                guard let data = SimpleSyncServerList()  else{
+                guard let data = SimpleSyncServerList2()  else{
                         print("------>>>empty server list")
                         return
                 }
