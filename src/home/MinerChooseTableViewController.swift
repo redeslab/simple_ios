@@ -75,13 +75,8 @@ class MinerChooseViewController: UIViewController {
                         }
                         
                         let miner_addr = m_data.addr
-                        guard let ret = SimpleTestPing(miner_addr) else{
-                                m_data.host = "no bas".locStr
-                                return
-                        }
-                        let jsonData = JSON(ret)
-                        m_data.host = jsonData["IP"].string
-                        m_data.ping = jsonData["Ping"].double ?? -1
+                        let ip = m_data.host
+                        m_data.ping =  Double(SimpleGetPingVal(miner_addr, ip))
                         
                         let context = DataShareManager.privateQueueContext()
                         DataShareManager.saveContext(context)
@@ -101,13 +96,7 @@ class MinerChooseViewController: UIViewController {
                         dispatchGrp.enter()
                         AppSetting.workQueue.async(group:dispatchGrp) {
                                 defer{ dispatchGrp.leave()}
-                                guard let ret = SimpleTestPing(miner.addr!) else{
-                                        miner.host = "no bas".locStr
-                                        return
-                                }
-                                let jsonData = JSON(ret)
-                                miner.host = jsonData["IP"].string
-                                miner.ping = jsonData["Ping"].double ?? -1
+                                miner.ping = Double(SimpleGetPingVal(miner.addr!, miner.host))
                         }
                 }
                 
